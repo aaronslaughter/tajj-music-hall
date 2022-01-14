@@ -1,7 +1,5 @@
 'use strict';
-const {
-  Model
-} = require('sequelize');
+const { Model } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class Event extends Model {
     /**
@@ -11,15 +9,20 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      Event.hasMany(models.Comment, { foreignKey: 'event_id' });
+      Event.hasMany(models.Users_Events, { foreignKey: 'event_id' });
     }
-  };
-  Event.init({
-    user_id: DataTypes.INTEGER,
-    event_code: DataTypes.INTEGER,
-    likes: DataTypes.INTEGER
-  }, {
-    sequelize,
-    modelName: 'Event',
-  });
+  }
+  Event.init(
+    {
+      event_code: DataTypes.INTEGER,
+      likes: DataTypes.INTEGER
+    },
+    {
+      sequelize,
+      modelName: 'Event',
+      tableName: 'events'
+    }
+  );
   return Event;
 };

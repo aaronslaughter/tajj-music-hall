@@ -1,14 +1,11 @@
 'use strict';
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('Events', {
+    await queryInterface.createTable('events', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER
-      },
-      user_id: {
         type: Sequelize.INTEGER
       },
       event_code: {
@@ -28,6 +25,6 @@ module.exports = {
     });
   },
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('Events');
+    await queryInterface.dropTable('events');
   }
 };
