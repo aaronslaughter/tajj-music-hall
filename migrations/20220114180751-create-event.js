@@ -9,7 +9,7 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       event_code: {
-        type: Sequelize.INTEGER
+        type: Sequelize.STRING
       },
       likes: {
         type: Sequelize.INTEGER
