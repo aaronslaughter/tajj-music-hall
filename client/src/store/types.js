@@ -1,0 +1,1 @@
+export const TEST_GET_EVENTS = 'TEST_GET_EVENTS'
