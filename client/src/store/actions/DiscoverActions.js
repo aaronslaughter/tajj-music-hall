@@ -1,10 +1,10 @@
-import { GetEvents } from '../../services/DiscoverServices'
+import { DiscoverEvents } from '../../services/BITServices'
 import { DISCOVER_EVENTS } from '../types'
 
 export const LoadEvents = () => {
   return async (dispatch) => {
     try {
-      const events = await GetEvents()
+      const events = await DiscoverEvents()
 
       dispatch({
         type: DISCOVER_EVENTS,
