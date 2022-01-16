@@ -7,7 +7,7 @@ export default function NavBar({ authenticated, user, handleLogOut }) {
   if (user) {
     authenticatedOptions = (
       <nav>
-        <h3>Welcome {user.email}!</h3>
+        <h3>Welcome {user.name}!</h3>
         <NavLink to="/">Home</NavLink>
         <NavLink to='/events'>Events</NavLink>
         <NavLink to='/profile'>Profile</NavLink>
