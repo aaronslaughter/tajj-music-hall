@@ -1,16 +1,16 @@
-import { TEST_GET_EVENTS } from "../types";
+import { DISCOVER_EVENTS } from "../types";
 
 const initialState = {
   events: []
 }
 
-const BITTestReducer = (state = initialState, action) => {
+const DiscoverReducer = (state = initialState, action) => {
   switch (action.type) {
-    case TEST_GET_EVENTS:
+    case DISCOVER_EVENTS:
       return { ...state, events: action.payload }
     default:
       return { ...state }
   }
 }
 
-export default BITTestReducer
+export default DiscoverReducer

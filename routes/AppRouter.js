@@ -1,0 +1,12 @@
+const Router = require('express').Router();
+const UserRouter = require('./UserRouter');
+const EventRouter = require('./EventRouter');
+const UsersEventsRouter = require('./UsersEventsRouter');
+const CommentRouter = require('./CommentRouter.js');
+const AuthRouter = require('./AuthRouter');
+Router.use('/register', AuthRouter);
+Router.use('/users', UserRouter);
+Router.use('/events', EventRouter);
+Router.use('/users_events', UsersEventsRouter);
+Router.use('/comments', CommentRouter);
+module.exports = Router;
