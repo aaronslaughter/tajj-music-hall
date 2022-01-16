@@ -1,6 +1,8 @@
 import { BITClient } from './index';
 
-export const GetEvents = async () => {
+const maxEvents = 10;
+
+export const DiscoverEvents = async () => {
   try {
     let events = []
     let response = await BITClient.get(`/artists/Adele/events/?app_id=${process.env.REACT_APP_BIT_API_KEY}`)
@@ -23,6 +25,21 @@ export const GetEvents = async () => {
     })
 
     return events
+  } catch (error) {
+    throw error
+  }
+}
+
+export const SearchEvents = async (artist) => {
+  try {
+    const response = await BITClient.get(`/artists/${artist}/events/?app_id=${process.env.REACT_APP_BIT_API_KEY}`)
+
+    response.data.forEach((element) => {
+      let date = new Date (element.datetime)
+      element.datetime = date.toDateString()
+    })
+
+    return response.data.slice(0, maxEvents)
   } catch (error) {
     throw error
   }
