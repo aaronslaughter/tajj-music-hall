@@ -1,5 +1,5 @@
 import { SearchEvents } from "../../services/BITServices"
-import { SEARCH_EVENTS, UPDATE_SEARCH_TERM } from "../types"
+import { RESET_SEARCH_RESULTS, SEARCH_EVENTS, UPDATE_SEARCH_TERM } from "../types"
 
 export const UpdateSearchTerm = (newTerm) => ({
   type: UPDATE_SEARCH_TERM,
@@ -16,8 +16,16 @@ export const LoadEvents = (artist) => {
         payload: events
       })
     } catch (error) {
+      dispatch({
+        type: SEARCH_EVENTS,
+        payload: null
+      })
       throw error
     }
   }
 }
 
+export const ResetSearchResults = () => ({
+  type: RESET_SEARCH_RESULTS,
+  payload: null
+})
