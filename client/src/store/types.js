@@ -1,1 +1,2 @@
 export const TEST_GET_EVENTS = 'TEST_GET_EVENTS'
+export const DISCOVER_EVENTS = 'DISCOVER_EVENTS'
