@@ -1,14 +1,12 @@
 import { useState, useEffect } from 'react'
 import { Route, Switch } from 'react-router'
 import NavBar from './components/NavBar'
-import Home from './pages/Home'
 import Register from './pages/Register'
 import LogIn from './pages/LogIn'
 import './styles/App.css'
 import ProtectedRoute from './components/ProtectedRoute'
-import Events from './pages/Events'
+import SearchPage from './pages/SearchPage'
 import { CheckSession } from './services/Auth'
-import BITTest from './components/BITTest';
 
 function App() {
   const [authenticated, toggleAuthenticated] = useState(false)
@@ -43,18 +41,18 @@ function App() {
       />
       <main>
         <Switch>
-          <Route exact path="/Home" component={Home} />
+          <Route exact path="/"/>
           <Route path="/login" component={(props) => <LogIn {...props} setUser={setUser}
             toggleAuthenticated={toggleAuthenticated} />} />
           <Route path="/register" component={Register} />
-          <Route path="/events" component={Events} />
+          <Route path="/events" component={SearchPage} />
           {
             user && authenticated && (
               <ProtectedRoute
                 authenticated={authenticated}
                 user={user}
                 path="/events"
-                component={Events}
+                component={SearchPage}
               />
             )
           }
@@ -66,18 +64,3 @@ function App() {
 }
 
 export default App
-
-
-// import './App.css';
-// import BITTest from './components/BITTest';
-
-// function App() {
-//   return (
-//     <div className="App">
-//       Tajj App Placeholder
-//       <BITTest/>
-//     </div>
-//   );
-// }
-
-// export default App;
