@@ -6,7 +6,7 @@ import { LoadEvents } from '../store/actions/BITTestActions'
 
 export const BITTest = (props) => {
 
-  useEffect( async () => {
+  useEffect(() => {
     props.fetchEvents()
   }, [])
 
