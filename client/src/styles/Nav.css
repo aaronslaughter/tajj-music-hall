@@ -1,0 +1,16 @@
+
+.header{
+  display: ms-inline-grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: peachpuff;
+}
+
+#navLogo{
+  max-width: 10%;
+  min-width: 5%;
+  justify-content: left;
+}
+
+.navigation{
+  background-color: orange;
+}
