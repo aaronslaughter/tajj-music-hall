@@ -14,6 +14,9 @@ module.exports = {
       likes: {
         type: Sequelize.INTEGER
       },
+      artist: {
+        type: Sequelize.STRING
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

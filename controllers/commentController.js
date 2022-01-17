@@ -6,6 +6,22 @@ const getAllComments = async (req, res) => {
   res.status(200).send(allComments);
 };
 
+const getCommentsByUserId = async (req, res) => {
+  const userId = parseInt(req.params.userId);
+  const allComments = await Comment.findAll({
+    where: { user_id: userId }
+  });
+  res.status(200).send(allComments);
+};
+
+const getCommentsByEventId = async (req, res) => {
+  const eventId = parseInt(req.params.eventId);
+  const allComments = await Comment.findAll({
+    where: { event_id: eventId }
+  });
+  res.status(200).send(allComments);
+};
+
 const createNewComment = async (req, res) => {
   const newComment = await Comment.create({
     ...req.body,
@@ -44,6 +60,8 @@ const deleteComment = async (req, res) => {
 
 module.exports = {
   getAllComments,
+  getCommentsByUserId,
+  getCommentsByEventId,
   createNewComment,
   updateComment,
   deleteComment
