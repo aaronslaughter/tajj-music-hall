@@ -20,7 +20,8 @@ module.exports = (sequelize, DataTypes) => {
   Event.init(
     {
       event_code: DataTypes.STRING,
-      likes: DataTypes.INTEGER
+      likes: DataTypes.INTEGER,
+      artist: DataTypes.STRING
     },
     {
       sequelize,

@@ -8,6 +8,7 @@ module.exports = {
       return {
         event_code: faker.internet.password(),
         likes: faker.datatype.number({ min: 100, max: 200 }),
+        artist: faker.name.findName(),
         createdAt: new Date(),
         updatedAt: new Date()
       };
