@@ -1,5 +1,5 @@
 const { RowDescriptionMessage } = require('pg-protocol/dist/messages');
-const { User, Users_Events, Event } = require('../models');
+const { User, Event } = require('../models');
 
 const getAllUsers = async (req, res) => {
   const allUsers = await User.findAll();
