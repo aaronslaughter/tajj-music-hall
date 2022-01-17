@@ -39,6 +39,10 @@ export const SearchEvents = async (artist) => {
       element.datetime = date.toDateString()
     })
 
+    if (response.data.length === 0) {
+      return null
+    }
+
     return response.data.slice(0, maxEvents)
   } catch (error) {
     throw error
