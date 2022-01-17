@@ -41,7 +41,7 @@ function App() {
       />
       <main>
         <Switch>
-          <Route exact path="/"/>
+          <Route exact path="/" />
           <Route path="/login" component={(props) => <LogIn {...props} setUser={setUser}
             toggleAuthenticated={toggleAuthenticated} />} />
           <Route path="/register" component={Register} />
