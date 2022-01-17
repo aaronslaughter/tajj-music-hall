@@ -48,3 +48,23 @@ export const SearchEvents = async (artist) => {
     throw error
   }
 }
+
+export const FindAllEvents = async (artist) => {
+  try {
+    const response = await BITClient.get(`/artists/${artist}/events/?app_id=${process.env.REACT_APP_BIT_API_KEY}&date=all`)
+
+    response.data.forEach((element) => {
+      let date = new Date (element.datetime)
+      element.datetime = date.toDateString()
+    })
+
+    if (response.data.length === 0) {
+      return null
+    }
+
+    return response.data
+
+  } catch (error) {
+    throw error
+  }
+}
