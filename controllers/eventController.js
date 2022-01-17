@@ -32,7 +32,7 @@ const getUsersByEventCode = async (req, res) => {
         through: { attributes: [] }
       }
     ],
-    where: { event_cEode: eventCode }
+    where: { event_code: eventCode }
   });
   res.status(200).send(allUsers);
 };
