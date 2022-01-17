@@ -10,7 +10,11 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       Event.hasMany(models.Comment, { foreignKey: 'event_id' });
-      Event.hasMany(models.Users_Events, { foreignKey: 'event_id' });
+      Event.belongsToMany(models.User, {
+        through: models.Users_Events,
+        as: 'user_list',
+        foreignKey: 'event_id'
+      });
     }
   }
   Event.init(
