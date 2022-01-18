@@ -13,7 +13,7 @@ const homePage = () => {
           <img src={BigLogo} alt='BigLogo' id="BigLogo"/>
           <div  id="BrandText">
             <img src={BrandText} alt='BrandText'  id="BrandText"/>
-            <button className='actionButton'>Login</button>
+            <button className='actionButton'>Get Started</button>
           </div>
         </div>
       </div>

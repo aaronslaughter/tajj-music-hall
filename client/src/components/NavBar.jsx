@@ -1,6 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import logo from './Logo-8.jpg'
+import BrandText from '../pages/BrandText-9.png'
 import '../styles/Nav.css'
 
 
@@ -31,6 +32,7 @@ export default function NavBar({ authenticated, user, handleLogOut }) {
     <header className='header'>
       <NavLink to="/">
           <img src={logo} alt="Tajj" id='navLogo'/>
+          <img src={BrandText} alt="Tajj" id='navLogo2'/>
       </NavLink>
       <div className='navigation'>{authenticated && user ? authenticatedOptions : publicOptions}</div>
     </header>
