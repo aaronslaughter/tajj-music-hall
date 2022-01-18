@@ -1,20 +1,24 @@
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
-import { LoadEvent } from '../store/actions/EventActions'
+import { LoadEvent, IsFavorite, GetAttendees, GetAllComments } from '../store/actions/EventActions'
 import EventDetailsCard from '../components/EventDetailsCard'
 
 export const EventPage = (props) => {
 
   useEffect(() => {
-    props.fetchEvent(props.match.params.artistName, props.match.params.eventId)
+    props.fetchEvent(props.match.params.artistName, props.match.params.eventCode)
+    if (props.user && props.authenticated) {
+      props.isFavorite(props.user.id, props.match.params.eventCode)
+    }
+    props.getAttendees(props.match.params.eventCode)
+    props.getComments(props.match.params.eventCode)
   }, [])
 
   return (
     <div>
       {props.eventState.details && 
-        <EventDetailsCard 
-          artist={props.eventState.details.artist} 
-          event={props.eventState.details.event}
+        <EventDetailsCard
+          {...props}
           user={props.user}
           authenticated={props.authenticated}
         />
@@ -29,7 +33,10 @@ const mapStateToProps = ({eventState}) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchEvent: (artist, eventId) => dispatch(LoadEvent(artist, eventId))
+    fetchEvent: (artist, eventCode) => dispatch(LoadEvent(artist, eventCode)),
+    isFavorite: (userId, eventCode) => dispatch(IsFavorite(userId, eventCode)),
+    getAttendees: (eventCode) => dispatch(GetAttendees(eventCode)),
+    getComments: (eventCode) => dispatch(GetAllComments(eventCode))
   }
 }
 
