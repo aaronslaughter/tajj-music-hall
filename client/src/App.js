@@ -8,6 +8,8 @@ import ProtectedRoute from './components/ProtectedRoute'
 import SearchPage from './pages/SearchPage'
 import { CheckSession } from './services/Auth'
 
+import pic1 from './components/landingPic.jpg'
+
 function App() {
   const [authenticated, toggleAuthenticated] = useState(false)
   const [user, setUser] = useState(null)
@@ -39,6 +41,7 @@ function App() {
         user={user}
         handleLogOut={handleLogOut}
       />
+      <img src={pic1} placeholder='Concert_picture' id="pic1"/>
       <main>
         <Switch>
           <Route exact path="/"/>
