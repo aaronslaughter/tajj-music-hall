@@ -3,10 +3,13 @@ import { Route, Switch } from 'react-router'
 import NavBar from './components/NavBar'
 import Register from './pages/Register'
 import LogIn from './pages/LogIn'
+import HomePage from './pages/homePage'
 import './styles/App.css'
 import ProtectedRoute from './components/ProtectedRoute'
 import SearchPage from './pages/SearchPage'
+import EventPage from './pages/EventPage'
 import { CheckSession } from './services/Auth'
+
 
 function App() {
   const [authenticated, toggleAuthenticated] = useState(false)
@@ -33,18 +36,25 @@ function App() {
 
   return (
     <div className="App">
-
       <NavBar
         authenticated={authenticated}
         user={user}
         handleLogOut={handleLogOut}
       />
+
       <main>
         <Switch>
-          <Route exact path="/"/>
+          <Route exact path="/" component={HomePage} />
           <Route path="/login" component={(props) => <LogIn {...props} setUser={setUser}
             toggleAuthenticated={toggleAuthenticated} />} />
           <Route path="/register" component={Register} />
+          <Route path="/events/:artistName/:eventCode" component={(props) => 
+            <EventPage 
+              {...props} 
+              user={user} 
+              authenticated={authenticated}
+            />
+          }/>
           <Route path="/events" component={SearchPage} />
           {
             user && authenticated && (
@@ -59,6 +69,7 @@ function App() {
 
         </Switch>
       </main>
+
     </div>
   )
 }

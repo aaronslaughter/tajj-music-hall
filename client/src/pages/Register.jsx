@@ -86,7 +86,7 @@ export default function Register(props) {
                         formValues.confirmPassword === formValues.password)
                   }
                >
-                  Log In
+                  Sign Up
                </button>
             </form>
          </div>

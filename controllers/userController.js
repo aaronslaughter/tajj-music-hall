@@ -1,9 +1,39 @@
 const { RowDescriptionMessage } = require('pg-protocol/dist/messages');
-const { User } = require('../models');
+const { User, Event } = require('../models');
 
 const getAllUsers = async (req, res) => {
   const allUsers = await User.findAll();
   res.status(200).send(allUsers);
+};
+
+const getEventsByUserId = async (req, res) => {
+  const userId = parseInt(req.params.userId);
+  const allEvents = await User.findAll({
+    include: [
+      {
+        model: Event,
+        as: 'event_list',
+        through: { attribute: [] }
+      }
+    ],
+    where: { id: userId },
+    returning: true
+  });
+  res.status(200).send(allEvents);
+};
+const getEventsByUserName = async (req, res) => {
+  const name = req.params.userName;
+  const allEvents = await User.findAll({
+    include: [
+      {
+        model: Event,
+        as: 'event_list',
+        through: { attributes: [] }
+      }
+    ],
+    where: { name: name }
+  });
+  res.status(200).send(allEvents);
 };
 
 const createNewUser = async (req, res) => {
@@ -44,6 +74,8 @@ const deleteUser = async (req, res) => {
 
 module.exports = {
   getAllUsers,
+  getEventsByUserId,
+  getEventsByUserName,
   createNewUser,
   updateUser,
   deleteUser

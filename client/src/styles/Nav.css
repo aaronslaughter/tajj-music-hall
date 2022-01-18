@@ -1,0 +1,37 @@
+*{
+justify-self: center;
+}
+.header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family:sans-serif;
+  border-bottom: 2px solid rgba(128, 128, 128, 0.295);
+  
+}
+
+#navLogo{
+  width: 80px;
+  cursor: pointer;
+  margin-left: 50px;
+
+}
+#navLogo2{
+  width: 80px;
+  cursor: pointer;
+}
+
+.navigation{
+  margin-right: 50px;
+}
+
+#navItem{
+  text-decoration: none;
+  display: inline-block;
+  margin: 20px;
+  color: black;
+}
+
+#navItem:hover{
+  font-weight: 700;
+}
