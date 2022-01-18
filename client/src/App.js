@@ -3,12 +3,12 @@ import { Route, Switch } from 'react-router'
 import NavBar from './components/NavBar'
 import Register from './pages/Register'
 import LogIn from './pages/LogIn'
+import homePage from './pages/homePage'
 import './styles/App.css'
 import ProtectedRoute from './components/ProtectedRoute'
 import SearchPage from './pages/SearchPage'
 import { CheckSession } from './services/Auth'
 
-import pic1 from './components/landingPic.jpg'
 
 function App() {
   const [authenticated, toggleAuthenticated] = useState(false)
@@ -35,16 +35,16 @@ function App() {
 
   return (
     <div className="App">
-
       <NavBar
         authenticated={authenticated}
         user={user}
         handleLogOut={handleLogOut}
       />
-      <img src={pic1} placeholder='Concert_picture' id="pic1"/>
+     
+
       <main>
         <Switch>
-          <Route exact path="/"/>
+          <Route exact path="/" component={homePage}/>
           <Route path="/login" component={(props) => <LogIn {...props} setUser={setUser}
             toggleAuthenticated={toggleAuthenticated} />} />
           <Route path="/register" component={Register} />
