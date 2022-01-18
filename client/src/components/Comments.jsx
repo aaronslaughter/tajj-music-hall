@@ -6,7 +6,7 @@ const Comments = (props) => {
     <div>
       {props.eventState.comments.map((element, index) => 
         <div key={index}>
-          <div>User: {props.eventState.attendees.find((attendee) => attendee.user_list[0].id === element.user_id).user_list[0].name}</div>
+          {props.eventState.attendees.length > 0 && <div>User: {props.eventState.attendees.find((attendee) => attendee.user_list[0].id === element.user_id).user_list[0].name}</div>}
           <div>Comment: {element.content}</div>
         </div>
       )}

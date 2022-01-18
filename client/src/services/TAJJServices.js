@@ -40,7 +40,6 @@ export const GetUsersFromEvent = async (eventCode) => {
 export const PostComment = async (eventId, userId, newComment) => {
   try {
     const response = await TAJJClient.post(`/comments`, {event_id: eventId, user_id: userId, content: newComment})
-    console.log(response);
   } catch (error) {
     throw error
   }
@@ -50,6 +49,11 @@ export const GetEventByEventCode = async (eventCode) => {
   try {
     const response = await TAJJClient.get(`/events`)
     let event = response.data.filter((element) => element.event_code === eventCode)
+
+    if (event.length === 0) {
+      return null
+    }
+
     return event[0].id
   } catch (error) {
     throw error
