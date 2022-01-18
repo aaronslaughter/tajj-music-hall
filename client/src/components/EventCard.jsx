@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 
 const EventCard = ({event}) => {
 
@@ -10,7 +11,7 @@ const EventCard = ({event}) => {
           <div>{event.artist.name} - {event.datetime}</div>
           <div>{event.venue.name} - {event.venue.location}</div>
           <div>Tickets: {event.offers[0] === undefined ? 'Unavailable' : <div>{event.offers[0].status}</div>}</div>
-          <div>more info...</div>
+          <NavLink to={`/events/${event.artist.name}/${event.id}`}>more info...</NavLink>
         </div>
       }
     </div>
