@@ -35,7 +35,7 @@ const SearchPage = (props) => {
       Search Page
       <form onSubmit={handleSubmit}>
         <input type='text' placeholder='Search Artist'  value={props.searchState.searchTerm} onChange={handleChange}></input>
-        <button>Search</button>
+        <button disabled={!props.searchState.searchTerm.length > 0}>Search</button>
       </form>
       <div>
         {renderArtistResults()}
