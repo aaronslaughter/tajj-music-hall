@@ -1,5 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import logo from './Logo-8.jpg'
+import '../styles/Nav.css'
 
 
 export default function NavBar({ authenticated, user, handleLogOut }) {
@@ -8,35 +10,29 @@ export default function NavBar({ authenticated, user, handleLogOut }) {
     authenticatedOptions = (
       <nav>
         <h3>Welcome {user.name}!</h3>
-        <NavLink to="/">Home</NavLink>
-        <NavLink to='/events'>Events</NavLink>
-        <NavLink to='/profile'>Profile</NavLink>
-        <NavLink onClick={handleLogOut} to="/">Log Out</NavLink>
+        <NavLink to="/" id="navItem">HOME</NavLink>
+        <NavLink to='/events' id="navItem">EVENTS</NavLink>
+        <NavLink to='/profile' id="navItem">PROFILE</NavLink>
+        <NavLink onClick={handleLogOut} to="/" id="navItem">LOG OUT</NavLink>
       </nav>
     )
   }
 
   const publicOptions = (
     <nav>
-      <NavLink to="/">Home</NavLink>
-      <NavLink to="/register">Sign Up</NavLink>
-      <NavLink to="/login">Log In</NavLink>
-      <NavLink to='/events'>Events</NavLink>
+      <NavLink to="/" id="navItem">HOME</NavLink>
+      <NavLink to='/events' id="navItem">EVENTS</NavLink>
+      <NavLink to="/register" id="navItem">SIGN-UP</NavLink>
+      <NavLink to="/login" id="navItem">LOG-IN</NavLink>
     </nav>
   )
 
   return (
-    <header>
+    <header className='header'>
       <NavLink to="/">
-        <div className="logo-wrapper" alt="logo">
-          {/* <img
-            className="logo"
-            src="https://.com or img file.svg"
-            alt="logo description"
-          /> */}
-        </div>
+          <img src={logo} alt="Tajj" id='navLogo'/>
       </NavLink>
-      {authenticated && user ? authenticatedOptions : publicOptions}
+      <div className='navigation'>{authenticated && user ? authenticatedOptions : publicOptions}</div>
     </header>
   )
 }

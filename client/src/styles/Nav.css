@@ -1,16 +1,31 @@
 
 .header{
-  display: ms-inline-grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background-color: peachpuff;
+  font-family:sans-serif;
+  border-bottom: 2px solid rgba(128, 128, 128, 0.295);
 }
 
 #navLogo{
-  max-width: 10%;
-  min-width: 5%;
-  justify-content: left;
+  width: 80px;
+  background-color: peru;
+  cursor: pointer;
+  margin-left: 50px;
 }
 
 .navigation{
-  background-color: orange;
+  background-color: plum;
+  margin-right: 50px;
+}
+
+#navItem{
+  text-decoration: none;
+  display: inline-block;
+  margin: 20px;
+}
+
+#navItem:hover{
+  font-weight: 700;
 }
