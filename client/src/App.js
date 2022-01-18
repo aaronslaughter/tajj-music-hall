@@ -3,7 +3,7 @@ import { Route, Switch } from 'react-router'
 import NavBar from './components/NavBar'
 import Register from './pages/Register'
 import LogIn from './pages/LogIn'
-import homePage from './pages/homePage'
+import HomePage from './pages/homePage'
 import './styles/App.css'
 import ProtectedRoute from './components/ProtectedRoute'
 import SearchPage from './pages/SearchPage'
@@ -40,11 +40,10 @@ function App() {
         user={user}
         handleLogOut={handleLogOut}
       />
-     
 
       <main>
         <Switch>
-          <Route exact path="/" component={homePage}/>
+          <Route exact path="/" component={HomePage} />
           <Route path="/login" component={(props) => <LogIn {...props} setUser={setUser}
             toggleAuthenticated={toggleAuthenticated} />} />
           <Route path="/register" component={Register} />
@@ -62,6 +61,7 @@ function App() {
 
         </Switch>
       </main>
+
     </div>
   )
 }
