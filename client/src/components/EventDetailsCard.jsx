@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { IsFavorite } from '../store/actions/EventActions'
+import { IsFavorite, GetAttendees } from '../store/actions/EventActions'
 import { AddEventForUser } from '../services/TAJJServices'
 import AddComment from './AddComment'
 import Comments from './Comments'
@@ -15,6 +15,7 @@ const EventDetailsCard = (props) => {
     )
 
     await props.isFavorite(props.user.id, props.eventState.details.event.id)
+    await props.getAttendees(props.match.params.eventCode)
   }
 
   return (
@@ -43,7 +44,8 @@ const mapStateToProps = ({eventState}) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    isFavorite: (userId, eventId) => dispatch(IsFavorite(userId, eventId))
+    isFavorite: (userId, eventId) => dispatch(IsFavorite(userId, eventId)),
+    getAttendees: (eventCode) => dispatch(GetAttendees(eventCode))
   }
 }
 
