@@ -9,6 +9,9 @@ import ProtectedRoute from './components/ProtectedRoute'
 import SearchPage from './pages/SearchPage'
 import EventPage from './pages/EventPage'
 import { CheckSession } from './services/Auth'
+import Update from './components/Update'
+import LandingSplash from './LandingSplash'
+
 
 
 function App() {
@@ -44,17 +47,19 @@ function App() {
 
       <main>
         <Switch>
-          <Route exact path="/" component={HomePage} />
+          <Route exact path="/" component={LandingSplash} />
+          <Route exact path="/homepage" component={HomePage} />
           <Route path="/login" component={(props) => <LogIn {...props} setUser={setUser}
             toggleAuthenticated={toggleAuthenticated} />} />
           <Route path="/register" component={Register} />
-          <Route path="/events/:artistName/:eventCode" component={(props) => 
-            <EventPage 
-              {...props} 
-              user={user} 
+          <Route path="/update" component={(props) => <Update {...props} user={user} handleLogOut={handleLogOut} />} />
+          <Route path="/events/:artistName/:eventCode" component={(props) =>
+            <EventPage
+              {...props}
+              user={user}
               authenticated={authenticated}
             />
-          }/>
+          } />
           <Route path="/events" component={SearchPage} />
           {
             user && authenticated && (
