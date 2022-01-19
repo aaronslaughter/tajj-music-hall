@@ -10,7 +10,7 @@
 
 ##### 01/13/2022
 
-### [Terra - GitHub](https://www.github/.com) || [LinkedIn](https://www.linkedin.com) || [TAJJ Music Hall APP](https://.com) || [TRELLO](https://trello.com/b/TRZnDhfF/tajj-music-hall)
+### [Terra - GitHub](https://www.github/.com) || [LinkedIn](https://www.linkedin.com) || [TAJJ Music Hall APP](https://tajjmusichall.herokuapp.com/) || [TRELLO](https://trello.com/b/TRZnDhfF/tajj-music-hall)
 
 ### [Julio - GitHub](https://github.com/julior0518)
 
