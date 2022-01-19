@@ -8,19 +8,23 @@ const ArtistCard = ({artist, events}) => {
     <div className='results'>
       {artist === undefined ? '' :
         <div className='artistProfile'>
-          <img src={artist.thumb_url} alt={artist.name}/>
-          <div>{artist.name}</div>
+          <img id="artistImage" src={artist.thumb_url} alt={artist.name}/>
+          <div id="artistName">{artist.name}</div>
         </div>
       }
       {events.length === undefined ? 'No Upcoming Events' : 
         <div>
           {events.map((element, index) =>
-            <div key={index}>
-              <div>{element.datetime}</div>
-              <div>{element.venue.name} - {element.venue.location}</div>
-              <div>Tickets: {element.offers[0] === undefined ? 'Unavailable' : <div>{element.offers[0].status}</div>}</div>
-              <NavLink to={`/events/${artist.name}/${element.id}`}>more info...</NavLink>
-              <div>--------------------------</div>
+            <div key={index} className='eventCard'>
+              <div className='eventInner'>
+                <h2 className="h2EventCard" id="hEvent">{element.venue.name} </h2> 
+                <div className='eventInfo'>
+                  <h5 id="hEvent">{element.datetime}</h5>
+                  <h5 id="hEvent"> {element.venue.location}</h5>
+                </div>
+                <p id="available">Tickets: {element.offers[0] === undefined ? 'unavailable' : <div id="availability"> { element.offers[0].status}</div>}</p>
+              </div>
+              <NavLink className="eventLink" to={`/events/${artist.name}/${element.id}`}>more info...</NavLink>
             </div>
           )}
         </div>
