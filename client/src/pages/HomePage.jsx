@@ -5,6 +5,7 @@ import '../styles/HomePage.css'
 import React  from 'react'
 import { useState } from 'react'
 import LogInOut from '../components/LoginOut'
+import DiscoverEvents from '../components/DiscoverEvents'
 
 
 
@@ -32,6 +33,7 @@ const HomePage = () => {
         </div>
       </div>
       <h1>FOLLOW YOUR FAVOURITE <br></br> STARS ON TOUR</h1>
+      <DiscoverEvents/>
     </div>
   )
 }
