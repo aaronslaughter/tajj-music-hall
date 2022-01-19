@@ -3,6 +3,9 @@ import { useEffect } from 'react'
 import { connect } from 'react-redux'
 import ArtistCard from '../components/ArtistCard'
 import { UpdateSearchTerm, LoadEvents, ResetSearchResults } from '../store/actions/SearchActions'
+import '../styles/Events.css'
+import pic1 from '../assets/EventsImageTop.png'
+
 
 const SearchPage = (props) => {
 
@@ -31,12 +34,15 @@ const SearchPage = (props) => {
   }
 
   return (
-    <div>
-      Search Page
-      <form onSubmit={handleSubmit}>
-        <input type='text' placeholder='Search Artist'  value={props.searchState.searchTerm} onChange={handleChange}></input>
-        <button disabled={!props.searchState.searchTerm.length > 0}>Search</button>
-      </form>
+    <div className='EventsPage'>
+      <div className='SearchBar'>
+        <img src={pic1} />
+        <h1>Search Page</h1>
+        <form onSubmit={handleSubmit}>
+          <input type='text' placeholder='Search Artist'  value={props.searchState.searchTerm} onChange={handleChange}></input>
+          <button disabled={!props.searchState.searchTerm.length > 0}>Search</button>
+        </form>
+      </div>
       <div>
         {renderArtistResults()}
       </div>
