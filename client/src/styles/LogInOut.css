@@ -29,10 +29,10 @@ label {
   margin: 5px;
 }
 
-p {
+.p {
   cursor: pointer;;
   font-size: small;
 }
-p:hover{
+.p:hover{
   text-decoration: underline;
 }

@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-import logo from './Logo-8.jpg'
-import BrandText from '../pages/BrandText-9.png'
+import logo from '../assets/Logo-8.jpg'
+import BrandText from '../assets/BrandText-9.png'
 import '../styles/Nav.css'
 
 
