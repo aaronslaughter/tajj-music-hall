@@ -1,20 +1,24 @@
-# **_TAJJ Music Hall_**
+# **_TAJJ Mu'Hall_**
 
-<img src=img2/concert.jpg alt="concert" width="450" />
+<img src=img2/Tajj_03.png alt="concert" width="450" />
 
 ##### An event locator, planner and social app all in one, with a huge library of concert venues that users can access anywhere.
 
 ---
 
-#### Created By: Aaron Slaughter; Jane Wang; Julio Rodriguez and Terra Smith
+#### Created by:
+
+### [Terra Smith](https://github.com/Terra-06) - Music Master
+
+### [Aaron Slaughter](https://github.com/aaronslaughter) - Git Warden
+
+### [Jane Wang](https://github.com/janemzwangnj) - Backend Wizard
+
+### [Julio Rodriguez](https://github.com/julior0518) - Design Guy
 
 ##### 01/13/2022
 
-### [Terra - GitHub](https://www.github/.com) || [LinkedIn](https://www.linkedin.com) || [TAJJ Music Hall APP](https://tajjmusichall.herokuapp.com/) || [TRELLO](https://trello.com/b/TRZnDhfF/tajj-music-hall)
-
-### [Julio - GitHub](https://github.com/julior0518)
-
-### [Aaron - GitHub](https://github.com/aaronslaughter)
+### [TAJJ Music Hall APP](https://tajjmusichall.herokuapp.com/) || [TRELLO](https://trello.com/b/TRZnDhfF/tajj-music-hall)
 
 ---
 
@@ -22,13 +26,13 @@
 
 #### TAJJ Music Hall is a concert event social app, essentially geared towards assistance with finding music events and locating other users that will attend the same function. Users can access this large database whenever they need to find a local event and meet-up with friends, or even strangers with similar tastes in music. <br>
 
-<img src=img2/crowd.jpg alt="crowd at a concert" width="450" />
+<img src=img2/Tajj_homepg.png alt="crowd at a concert" width="450" />
 
 ---
 
-### **_Technology Used_**
+### **_Technologies Used_**
 
-VS Code|| Postgres || Express || REACT || NodeJS || Sequelize || Insomnia || Figma || Whimsical || Inkscape || SketchBook
+VS Code || Postgres || Express || REACT || NodeJS || Sequelize || Insomnia || Figma || Whimsical || Inkscape || SketchBook || Illustrator
 
 ---
 
@@ -38,11 +42,11 @@ VS Code|| Postgres || Express || REACT || NodeJS || Sequelize || Insomnia || Fig
 
 ---
 
-<img src=img2/man.jpg alt="man playing guitar" width="275" />
+<img src=img2/Tajj_01.png alt="man playing guitar" width="450" />
 
 ---
 
-## **_Benefits of a Music Event Social App:_**
+### **_Benefits of a Music Event Social App:_**
 
 -  Instant access to up and coming local acts.
 -  Careful planning and chance to meet others.
@@ -50,9 +54,7 @@ VS Code|| Postgres || Express || REACT || NodeJS || Sequelize || Insomnia || Fig
 
 ---
 
----
-
-## **_How TAJJ Music Hall works_**
+## **_How TAJJ Mu'Hall works_**
 
 <img src=img2/party.jpg alt="crowd at concert" width="450" />
 
@@ -64,11 +66,9 @@ VS Code|| Postgres || Express || REACT || NodeJS || Sequelize || Insomnia || Fig
 
 ### **_Future Updates_**
 
-##### - [ ] Update How the app works
+##### - [x] ~~Add images of the app~~
 
-##### - [ ] Add images of the app
-
-##### - [ ] Update ReadMe
+##### - [x] ~~Update ReadMe~~
 
 ##### - [ ] TBD
 
@@ -76,4 +76,4 @@ VS Code|| Postgres || Express || REACT || NodeJS || Sequelize || Insomnia || Fig
 
 #### **_Credits_**
 
-Images: [Pixabay](https://www.pixabay.com/)
+Images: [Pixabay](https://www.pixabay.com/), [Tajj Mu'Hall](https://tajjmusichall.herokuapp.com/)
