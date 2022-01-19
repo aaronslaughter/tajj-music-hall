@@ -22,7 +22,7 @@ const ArtistCard = ({artist, events}) => {
                   <h5 id="hEvent">{element.datetime}</h5>
                   <h5 id="hEvent"> {element.venue.location}</h5>
                 </div>
-                <p id="available">Tickets: {element.offers[0] === undefined ? 'unavailable' : <div id="availability"> { element.offers[0].status}</div>}</p>
+                <div id="available">Tickets: {element.offers[0] === undefined ? 'unavailable' : <div id="availability"> { element.offers[0].status}</div>}</div>
               </div>
               <NavLink className="eventLink" to={`/events/${artist.name}/${element.id}`}>more info...</NavLink>
             </div>
