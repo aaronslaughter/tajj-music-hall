@@ -1,5 +1,4 @@
 import React from 'react'
-import { useEffect } from 'react'
 import { connect } from 'react-redux'
 import ArtistCard from '../components/ArtistCard'
 import { UpdateSearchTerm, LoadEvents, ResetSearchResults } from '../store/actions/SearchActions'
@@ -8,10 +7,6 @@ import pic1 from '../assets/EventsImageTop.png'
 
 
 const SearchPage = (props) => {
-
-  useEffect(() => {
-    props.resetSearchResults()
-  }, [])
 
   const handleChange = (e) => {
     props.updateSearchTerm(e.target.value)
