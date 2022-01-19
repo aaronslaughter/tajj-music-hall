@@ -35,11 +35,11 @@ const SearchPage = (props) => {
 
   return (
     <div className='EventsPage'>
+      <img src={pic1} className='imageEvents'/>
+      <h1 className='eventsText'>WHAT ARTIST ARE <br></br>YOU SEEING NEXT?</h1>
       <div className='SearchBar'>
-        <img src={pic1} />
-        <h1>Search Page</h1>
         <form onSubmit={handleSubmit}>
-          <input type='text' placeholder='Search Artist'  value={props.searchState.searchTerm} onChange={handleChange}></input>
+          <input id="searchBox" type='text' placeholder='Search Artist'  value={props.searchState.searchTerm} onChange={handleChange}></input>
           <button disabled={!props.searchState.searchTerm.length > 0}>Search</button>
         </form>
       </div>

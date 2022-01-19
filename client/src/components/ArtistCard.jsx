@@ -1,11 +1,13 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import '../styles/Events.css'
+
 
 const ArtistCard = ({artist, events}) => {
   return (
-    <div>
+    <div className='results'>
       {artist === undefined ? '' :
-        <div>
+        <div className='artistProfile'>
           <img src={artist.thumb_url} alt={artist.name}/>
           <div>{artist.name}</div>
         </div>
