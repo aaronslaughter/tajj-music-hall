@@ -40,7 +40,7 @@ const SearchPage = (props) => {
       <div className='SearchBar'>
         <form  id="searchBarElements" onSubmit={handleSubmit}>
           <input id="searchBox" type='text' placeholder='Search Artist'  value={props.searchState.searchTerm} onChange={handleChange}></input>
-          <button  id="searchButton" disabled={!props.searchState.searchTerm.length > 0}>O</button>
+          <button  id="searchButton" disabled={!props.searchState.searchTerm.length > 0}>Search</button>
         </form>
       </div>
       <div>
