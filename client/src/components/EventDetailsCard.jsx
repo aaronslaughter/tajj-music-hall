@@ -5,6 +5,7 @@ import { AddEventForUser } from '../services/TAJJServices'
 import AddComment from './AddComment'
 import Comments from './Comments'
 
+
 const EventDetailsCard = (props) => {
 
   const addFavorite = async () => {
@@ -19,21 +20,34 @@ const EventDetailsCard = (props) => {
   }
 
   return (
-    <div>
+    <div className='eventRender'>
+      <div className='eventCardInfo'>
+        
       <img src={props.eventState.details.artist.thumb_url} alt={props.eventState.details.artist.name}/>
-      <div>{props.eventState.details.event.venue.name}</div>
-      <button disabled={!props.authenticated || props.eventState.isFavorite} onClick={addFavorite}>Favorite</button>
-      <div>{props.eventState.details.event.venue.location}</div>
-      <div>{props.eventState.details.event.datetime}</div>
-      <div>Who is attending?</div>
-      {props.eventState.attendees.map((element, index) => 
-        <div key={index}>{/* could use index for a random color */}
-          {element.user_list[0].name.charAt(0)} {/* needs link to profile */}
+        <div className='eventInfo2'>
+          <div>
+            <h1 id="HAnEvent">{props.eventState.details.artist.name}</h1>
+            <h2 id="HAnEvent">{props.eventState.details.event.venue.name}</h2>
+          </div>
+          <p>{props.eventState.details.event.venue.location}<br></br>
+          {props.eventState.details.event.datetime}</p>
         </div>
-      )}
-      <div>Comments</div>
-      <AddComment {...props} user={props.user} authenticated={props.authenticated}/>
-      <Comments/>
+      </div>
+      <button disabled={!props.authenticated || props.eventState.isFavorite} onClick={addFavorite}>Favorite</button>
+      <div className='post'>
+        <div className='attendeesBox'>
+        <h3>Who is attending?</h3>
+          {props.eventState.attendees.map((element, index) => 
+            <div className="attendee" key={index}>{/* could use index for a random color */}
+              <h4 id='attendeeI'>{element.user_list[0].name.charAt(0)}</h4> {/* needs link to profile */}
+            </div>
+          )}
+        </div>
+        <div className='comments'>
+          <AddComment {...props} user={props.user} authenticated={props.authenticated}/>
+          <Comments/>
+        </div>
+      </div>  
     </div>
   )
 }
