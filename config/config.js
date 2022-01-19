@@ -12,6 +12,7 @@ module.exports = {
   },
   production: {
     database: "DATABASE_URL",
+    host: "127,0.0.1",
     dialect: "postgres",
     dialectOptions: {
       ssl: {
