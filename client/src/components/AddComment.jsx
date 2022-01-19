@@ -19,15 +19,15 @@ const AddComment = (props) => {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
-        <input 
+      <form  className="if" onSubmit={handleSubmit}>
+        <input  className='inputfieldComment'
           onChange={handleChange} 
           type="text" 
           placeholder="Add Comment" 
           name="newComment"
           value={props.eventState.newComment}>
         </input>
-        <button disabled={!props.eventState.newComment ||
+        <button  className="ifButton" disabled={!props.eventState.newComment ||
           !props.user ||
           !props.authenticated ||
           !props.eventState.isFavorite}>
