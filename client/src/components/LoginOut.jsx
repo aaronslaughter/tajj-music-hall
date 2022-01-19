@@ -20,7 +20,7 @@ function LogInOut (props){
   let display
   form ? display=<LogIn/> : display=<Register/>
   let text
-  form ? text=<p onClick={handleClick}>Need to create a new account</p>:text=<p onClick={handleClick}>Already have an account</p>
+  form ? text=<p className='p' onClick={handleClick}>Need to create a new account</p>:text=<p onClick={handleClick}>Already have an account</p>
 
   return(
   <div className="pop" ref={close} onClick={closePop}>
