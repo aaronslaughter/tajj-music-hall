@@ -6,11 +6,12 @@
 
 ---
 
+<br>
 #### Created by:
 
 ### [Terra Smith](https://github.com/Terra-06) - Music Master
 
-### [Aaron Slaughter](https://github.com/aaronslaughter) - Git Warden
+### [Aaron Slaughter](https://github.com/aaronslaughter) - Github Specialist
 
 ### [Jane Wang](https://github.com/janemzwangnj) - Backend Wizard
 
@@ -20,19 +21,23 @@
 
 ### [TAJJ Music Hall APP](https://tajjmusichall.herokuapp.com/) || [TRELLO](https://trello.com/b/TRZnDhfF/tajj-music-hall)
 
+<br>
+
 ---
 
 ## **_Description_**
 
-#### TAJJ Music Hall is a concert event social app, essentially geared towards assistance with finding music events and locating other users that will attend the same function. Users can access this large database whenever they need to find a local event and meet-up with friends, or even strangers with similar tastes in music. <br>
+#### TAJJ Music Hall is a concert event social app, essentially geared towards assistance with finding music events and locating other users that will attend the same function. Users can access this large database whenever they need to find a local event and meet-up with friends, or even potential future friends with whom share similar tastes in music. <br>
 
 <img src=img2/Tajj_homepg.png alt="crowd at a concert" width="450" />
 
 ---
 
+<br>
 ### **_Technologies Used_**
 
 VS Code || Postgres || Express || REACT || NodeJS || Sequelize || Insomnia || Figma || Whimsical || Inkscape || SketchBook || Illustrator || FinalCut Pro
+<br>
 
 ---
 
@@ -56,24 +61,35 @@ VS Code || Postgres || Express || REACT || NodeJS || Sequelize || Insomnia || Fi
 
 ## **_How TAJJ Mu'Hall works_**
 
-<img src=img2/party.jpg alt="crowd at concert" width="450" />
+<img src=img2/Tajj_02.png alt="man playingcrowd at concert" width="250" />
 
-#### A user logs in and creates an account. Upon verification, user is then directed to a list of concerts and music events happening within their city. The user is given a few options to choose from in accordance to the Artist or Band they are interested in. Once decided, the user is directed towards a ticket purchase page, and is also able to find other people in their area who are also attending the same event, and the user can then plan a meet and greet, as well as supply a review/comment in regards to the concert.
+#### A user either logs in or creates a new account.<br><br>
 
-<img src=img2/show.jpg alt="concert footage" width="450" />
+#### Upon verification, the user is then directed to a list of concerts and music events happening within their city. <br><br>
+
+#### The user is given a few options to choose from in accordance to the **_artist_**, **_band_**, or **_festival_** they are interested in. Once decided, the user is directed towards a ticket purchase page, and is also able to find other people in their area who are attending the same event.<br><br>
+
+#### The user can then plan a meet and greet, update their profile, as well as supply a review/comment in regards to the concert or event.<br><br>
+
+<img src=img2/Tajj_04.png alt="Tajj-event-page" width="550" />
 
 ---
 
-### **_Future Updates_**
+## **_*Contributions*_**
 
-##### - [x] ~~Add images of the app~~
+##### **_Terra Smith_** - Music & video technician; Authentication correlation; README resolution; troubleshooting and debugging assistance. <br><br>
 
-##### - [x] ~~Update ReadMe~~
+##### **_Aaron Slaughter_** - React App front-end Redux coordinator; Github management; troubleshooting and debugging extraordinaire. <br><br>
 
-##### - [ ] TBD
+##### **_Jane Wang_** - Server side Back-end Specialist; Profile Guru; troubleshooting and debugging helper. <br><br>
+
+##### **_Julio Rodriguez_** - Creator of the pop up windows and all things Design; Front-end and back-end troubleshooting and debugging.
+
+<img src=img2/Tajj_team.png alt="Tajj-event-page" width="550" />
+<br>
 
 ---
 
 #### **_Credits_**
 
-Images: [Pixabay](https://www.pixabay.com/), [Tajj Mu'Hall](https://tajjmusichall.herokuapp.com/)
+Images:[Tajj Mu'Hall](https://tajjmusichall.herokuapp.com/)
