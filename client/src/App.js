@@ -12,6 +12,7 @@ import { CheckSession } from './services/Auth'
 import LogInOut from './components/LoginOut'
 import Update from './components/Update'
 import LandingSplash from './LandingSplash'
+import toast, { Toaster } from 'react-hot-toast';
 
 function App() {
   const [authenticated, toggleAuthenticated] = useState(false)
@@ -38,6 +39,16 @@ function App() {
     }
   }, [])
 
+  const notifyRegister = () => toast.success('Registered!', {
+    duration: 4000,
+    position: 'bottom-center'
+  });
+
+  const notifyLogin = () => toast.success('Login Successful!', {
+    duration: 4000,
+    position: 'bottom-center'
+  });
+
   return (
     <div className="App">
       <NavBar
@@ -47,8 +58,16 @@ function App() {
         pop={pop} 
         setPop={setPop}
       />
-      {pop && ( <LogInOut pop={pop} setPop={setPop} setUser={setUser} user={user} toggleAuthenticated={toggleAuthenticated} />
-)}
+
+      {pop && ( <LogInOut 
+        notifyRegister={notifyRegister} 
+        notifyLogin={notifyLogin} 
+        pop={pop} setPop={setPop} 
+        setUser={setUser} 
+        user={user} 
+        toggleAuthenticated={toggleAuthenticated}/>)
+      }
+
       <main>
         <Switch>
           <Route exact path="/home" component={(props)=><HomePage {...props } setPop={setPop} pop={pop} user={user} toggleAuthenticated={toggleAuthenticated}  />} />
@@ -64,21 +83,10 @@ function App() {
             />
           } />
           <Route path="/events" component={SearchPage} />
-          {
-            user && authenticated && (
-              <ProtectedRoute
-                authenticated={authenticated}
-                user={user}
-                path="/events"
-                component={SearchPage}
-              />
-            )
-          }
           <Route exact path="/" component={LandingSplash} />
-
         </Switch>
       </main>
-
+      <Toaster />
     </div>
   )
 }

@@ -39,6 +39,7 @@ export default function Register(props) {
       //    props.history.push('/events')
       // }
       // logInNow()
+      props.notifyRegister()
       props.setForm(!props.form)
    }
 
