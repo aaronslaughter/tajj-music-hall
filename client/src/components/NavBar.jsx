@@ -10,11 +10,11 @@ export default function NavBar({ authenticated, user, handleLogOut, pop, setPop 
   if (user) {
     authenticatedOptions = (
       <nav>
-        <NavLink to="/" id="navItem">HOME</NavLink>
+        <NavLink to="/home" id="navItem">HOME</NavLink>
         <NavLink to='/events' id="navItem">EVENTS</NavLink>
         <NavLink to='/profile' id="navItem">PROFILE</NavLink>
         <NavLink to='/update'>Update</NavLink>
-        <NavLink onClick={handleLogOut} to="/homepage" id="navItem">LOG OUT</NavLink>
+        <NavLink onClick={handleLogOut} to="/home" id="navItem">LOG OUT</NavLink>
       </nav>
     )
   }
