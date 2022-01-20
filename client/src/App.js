@@ -13,16 +13,18 @@ import EventPage from './pages/EventPage'
 import { CheckSession } from './services/Auth'
 import LogInOut from './components/LoginOut'
 import Update from './components/Update'
-import LandingSplash from './LandingSplash'
 import ProfilePage from './pages/ProfilePage'
 import toast, { Toaster } from 'react-hot-toast';
 import { LoadFavoriteEvents } from './store/actions/ProfileActions'
 import { LoadEvents } from './store/actions/DiscoverActions'
+import TajjMuHall from './videos/TajjMuHall.mov'
+
 
 function App(props) {
   const [authenticated, toggleAuthenticated] = useState(false)
   const [user, setUser] = useState(null)
   const [pop, setPop] = useState(false)
+  const [splash, setSplash] = useState (true)
 
   const handleLogOut = () => {
     //Reset all auth related state and clear localstorage
@@ -57,6 +59,8 @@ function App(props) {
 
   return (
     <div className="App">
+      {splash ? <video id="splash" onClick={() => setSplash(!splash)} autoPlay muted loop src={TajjMuHall} width="100%"></video> :
+      <div>
       <NavBar
         authenticated={authenticated}
         user={user}
@@ -77,7 +81,7 @@ function App(props) {
 
       <main>
         <Switch>
-          <Route exact path="/home" component={(props) => <HomePage {...props} setPop={setPop} pop={pop} user={user} toggleAuthenticated={toggleAuthenticated} />} />
+          <Route exact path="/" component={(props) => <HomePage {...props} setPop={setPop} pop={pop} user={user} toggleAuthenticated={toggleAuthenticated} />} />
           <Route path="/about" component={About} />
           <Route path="/login" component={(props) => <LogIn {...props} setPop={setPop} pop={pop} setUser={setUser}
             toggleAuthenticated={toggleAuthenticated} />} />
@@ -105,10 +109,11 @@ function App(props) {
           }
 
           <Route path="/events" component={SearchPage} />
-          <Route exact path="/" component={LandingSplash} />
         </Switch>
       </main>
       <Toaster />
+      </div>
+}
     </div>
   );
 }

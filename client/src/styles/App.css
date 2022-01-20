@@ -1,1 +1,6 @@
-
+*::-webkit-scrollbar {
+  display: none;
+}
+.splash{
+  height: 100vh;
+}
