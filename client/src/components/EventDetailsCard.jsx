@@ -5,6 +5,9 @@ import { AddEventForUser } from '../services/TAJJServices'
 import AddComment from './AddComment'
 import Comments from './Comments'
 
+const attendeeStyle = {
+
+}
 
 const EventDetailsCard = (props) => {
 
@@ -23,7 +26,7 @@ const EventDetailsCard = (props) => {
     <div className='eventRender'>
       <div className='eventCardInfo'>
         
-      <img src={props.eventState.details.artist.thumb_url} alt={props.eventState.details.artist.name}/>
+      <img id="artistImg" src={props.eventState.details.artist.thumb_url} alt={props.eventState.details.artist.name}/>
         <div className='eventInfo2'>
           <div>
             <h1 id="HAnEvent">{props.eventState.details.artist.name}</h1>
@@ -31,14 +34,15 @@ const EventDetailsCard = (props) => {
           </div>
           <p>{props.eventState.details.event.venue.location}<br></br>
           {props.eventState.details.event.datetime}</p>
+          <button id="favoriteButton" disabled={!props.authenticated || props.eventState.isFavorite} onClick={addFavorite}>Favorite</button>
         </div>
       </div>
-      <button disabled={!props.authenticated || props.eventState.isFavorite} onClick={addFavorite}>Favorite</button>
+      
       <div className='post'>
+      <h3>Who is attending?</h3>
         <div className='attendeesBox'>
-        <h3>Who is attending?</h3>
           {props.eventState.attendees.map((element, index) => 
-            <div className="attendee" key={index}>{/* could use index for a random color */}
+            <div className="attendee" key={index} style={{backgroundColor: `rgb(${Math.floor(Math.random()*255)},${Math.floor(Math.random()*255)},${Math.floor(Math.random()*255)})`}}>
               <h4 id='attendeeI'>{element.user_list[0].name.charAt(0)}</h4> {/* needs link to profile */}
             </div>
           )}

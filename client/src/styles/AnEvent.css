@@ -41,6 +41,8 @@
   padding: 10px 20px;
   background-color: rgb(224, 224, 224);
   border-radius: 10px;
+  display: flex;
+  gap: 1em;
 
 
 }
@@ -52,11 +54,13 @@
   align-items: center;
   border-radius: 360px;
   margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
   
 }
 #attendeeI{
-  padding-top: 6px;
   color: whitesmoke;
+  margin: 0 auto;
 }
 
 .comments{
@@ -114,6 +118,26 @@
 @media screen and (max-width:900px){
   .inputfieldComment{width: 300px;}
   .commentBox{width: 420px;}
+}
+
+#artistImg {
+  border-radius: 5px;
+}
+
+#favoriteButton {
+  width: 15em;
+  border-radius: 3px;
+  background-color: lightgreen;
+}
+
+#favoriteButton:hover {
+  opacity: 75%;
+}
+
+#favoriteButton:disabled {
+  background-color: red;
+  opacity: 40%;
+  color: white;
 }
 
 /* 

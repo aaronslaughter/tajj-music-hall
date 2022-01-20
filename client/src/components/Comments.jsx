@@ -25,7 +25,7 @@ const handleDelete = async (commentId) => {
               <div className='commentText'> 
                 {element.content}
               </div>
-              {props.user.id === element.user_id && props.authenticated && 
+              {props.authenticated && props.user.id === element.user_id && 
                 <button className='ifButton' onClick={() => handleDelete(element.id)}>Delete</button>
               }
             </div>
