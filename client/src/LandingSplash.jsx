@@ -1,16 +1,19 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import TajjMuHall from '../src/videos/TajjMuHall.mov'
 
 
 export default function LandingSplash() {
+
+  //onclick go to homepage
+
   return (
-    <div>
-      WHAT EVENT ARE YOU GOING TO NEXT?
-      <div className='travel'>
-        <video loop autoPlay src={TajjMuHall} width="750" height="500" >
-        </video>
-      </div >
-      {/*TODO: add splash image*/}
-    </div>
+
+    <div className='tajj_vid'>
+      <Link to='/homepage'><video autoPlay muted loop src={TajjMuHall} width="100%">
+      </video></Link>
+    </div >
   )
 }
+
+// <Link to="/signup" className="btn btn-primary">Sign up</Link>

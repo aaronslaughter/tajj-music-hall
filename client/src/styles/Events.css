@@ -155,3 +155,7 @@
 @media screen and (max-width:900px){
   .eventsText{font-size: 56px;}
 }
+
+#pEvents {
+  color: white;
+}

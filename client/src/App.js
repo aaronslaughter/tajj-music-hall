@@ -10,7 +10,8 @@ import SearchPage from './pages/SearchPage'
 import EventPage from './pages/EventPage'
 import { CheckSession } from './services/Auth'
 import LogInOut from './components/LoginOut'
-
+import Update from './components/Update'
+import LandingSplash from './LandingSplash'
 
 function App() {
   const [authenticated, toggleAuthenticated] = useState(false)
@@ -51,17 +52,18 @@ function App() {
 )}
       <main>
         <Switch>
-          <Route exact path="/" component={(props)=><HomePage {...props } setPop={setPop} pop={pop} user={user} toggleAuthenticated={toggleAuthenticated}  />} />
+          <Route exact path="/home" component={(props)=><HomePage {...props } setPop={setPop} pop={pop} user={user} toggleAuthenticated={toggleAuthenticated}  />} />
           <Route path="/login" component={(props) => <LogIn {...props} setPop={setPop} pop={pop} setUser={setUser} 
             toggleAuthenticated={toggleAuthenticated} />} />
           <Route path="/register" component={Register} />
-          <Route path="/events/:artistName/:eventCode" component={(props) => 
-            <EventPage 
-              {...props} 
-              user={user} 
+          <Route path="/update" component={(props) => <Update {...props} user={user} handleLogOut={handleLogOut} />} />
+          <Route path="/events/:artistName/:eventCode" component={(props) =>
+            <EventPage
+              {...props}
+              user={user}
               authenticated={authenticated}
             />
-          }/>
+          } />
           <Route path="/events" component={SearchPage} />
           {
             user && authenticated && (
@@ -73,6 +75,7 @@ function App() {
               />
             )
           }
+          <Route exact path="/" component={LandingSplash} />
 
         </Switch>
       </main>

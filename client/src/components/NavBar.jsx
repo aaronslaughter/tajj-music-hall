@@ -13,7 +13,8 @@ export default function NavBar({ authenticated, user, handleLogOut, pop, setPop 
         <NavLink to="/" id="navItem">HOME</NavLink>
         <NavLink to='/events' id="navItem">EVENTS</NavLink>
         <NavLink to='/profile' id="navItem">PROFILE</NavLink>
-        <NavLink onClick={handleLogOut} to="/" id="navItem">LOG OUT</NavLink>
+        <NavLink to='/update'>Update</NavLink>
+        <NavLink onClick={handleLogOut} to="/homepage" id="navItem">LOG OUT</NavLink>
       </nav>
     )
   }
@@ -22,18 +23,17 @@ export default function NavBar({ authenticated, user, handleLogOut, pop, setPop 
   }
   const publicOptions = (
     <nav>
-      <NavLink to="/" id="navItem">HOME</NavLink>
+      <NavLink to="/home" id="navItem">HOME</NavLink>
       <NavLink to='/events' id="navItem">EVENTS</NavLink>
       <button className="buttonNav" onClick={handleClickLogRegister}>SignUp / LogIn</button>
-
     </nav>
   )
 
   return (
     <header className='header'>
       <NavLink to="/">
-          <img src={logo} alt="Tajj" id='navLogo'/>
-          <img src={BrandText} alt="Tajj" id='navLogo2'/>
+        <img src={logo} alt="Tajj" id='navLogo' />
+        <img src={BrandText} alt="Tajj" id='navLogo2' />
       </NavLink>
       <div className='navigation'>{authenticated && user ? authenticatedOptions : publicOptions}</div>
     </header>
