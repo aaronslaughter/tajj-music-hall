@@ -12,14 +12,16 @@ import EventPage from './pages/EventPage'
 import { CheckSession } from './services/Auth'
 import LogInOut from './components/LoginOut'
 import Update from './components/Update'
-import LandingSplash from './LandingSplash'
 import ProfilePage from './pages/ProfilePage'
 import toast, { Toaster } from 'react-hot-toast';
+import TajjMuHall from './videos/TajjMuHall.mov'
+import BWlogoWhite from './assets/BWlogoWhite-8.png'
 
 function App() {
   const [authenticated, toggleAuthenticated] = useState(false)
   const [user, setUser] = useState(null)
   const [pop, setPop] = useState(false)
+  const [splash, setSplash] = useState (true)
 
   const handleLogOut = () => {
     //Reset all auth related state and clear localstorage
@@ -52,57 +54,62 @@ function App() {
 
   return (
     <div className="App">
-      <NavBar
-        authenticated={authenticated}
-        user={user}
-        handleLogOut={handleLogOut}
-        pop={pop}
-        setPop={setPop}
-      />
+      {splash ? 
+      <div>
+        <img id="splashImage" src={BWlogoWhite}/>
+        <video id="splash" onClick={() => setSplash(!splash)} autoPlay muted loop src={TajjMuHall} width="100%"></video>
+      </div> :
+      <div>
+        <NavBar
+          authenticated={authenticated}
+          user={user}
+          handleLogOut={handleLogOut}
+          pop={pop}
+          setPop={setPop}
+        />
+        {pop && ( <LogInOut 
+          notifyRegister={notifyRegister} 
+          notifyLogin={notifyLogin}
+          pop={pop} setPop={setPop} 
+          setUser={setUser} 
+          user={user} 
+          toggleAuthenticated={toggleAuthenticated}/>)
+        }
 
-      {pop && ( <LogInOut 
-        notifyRegister={notifyRegister} 
-        notifyLogin={notifyLogin} 
-        pop={pop} setPop={setPop} 
-        setUser={setUser} 
-        user={user} 
-        toggleAuthenticated={toggleAuthenticated}/>)
+        <main>
+          <Switch>
+            <Route exact path="/" component={(props) => <HomePage {...props} setPop={setPop} pop={pop} user={user} toggleAuthenticated={toggleAuthenticated} />} />
+            <Route path="/about" component={About} />
+            <Route path="/login" component={(props) => <LogIn {...props} setPop={setPop} pop={pop} setUser={setUser}
+              toggleAuthenticated={toggleAuthenticated} />} />
+            <Route path="/register" component={Register} />
+            <Route
+              path="/update"
+              component={(props) => (
+                <Update {...props} user={user} handleLogOut={handleLogOut} />
+              )}
+            />
+            <Route
+              path="/events/:artistName/:eventCode"
+              component={(props) => (
+                <EventPage {...props} user={user} authenticated={authenticated} />
+              )}
+            />
+            {user && authenticated && (
+                <ProtectedRoute
+                  authenticated={authenticated}
+                  user={user}
+                  path="/profile"
+                  component={(props) => <ProfilePage {...props} user={user} authenticated={authenticated}/>}
+                />
+              )
+            }
+            <Route path="/events" component={SearchPage} />
+          </Switch>
+        </main>
+        <Toaster />
+      </div>
       }
-
-      <main>
-        <Switch>
-          <Route exact path="/home" component={(props) => <HomePage {...props} setPop={setPop} pop={pop} user={user} toggleAuthenticated={toggleAuthenticated} />} />
-          <Route path="/about" component={About} />
-          <Route path="/login" component={(props) => <LogIn {...props} setPop={setPop} pop={pop} setUser={setUser}
-            toggleAuthenticated={toggleAuthenticated} />} />
-          <Route path="/register" component={Register} />
-          <Route
-            path="/update"
-            component={(props) => (
-              <Update {...props} user={user} handleLogOut={handleLogOut} />
-            )}
-          />
-          <Route
-            path="/events/:artistName/:eventCode"
-            component={(props) => (
-              <EventPage {...props} user={user} authenticated={authenticated} />
-            )}
-          />
-          {user && authenticated && (
-              <ProtectedRoute
-                authenticated={authenticated}
-                user={user}
-                path="/profile"
-                component={(props) => (
-                  <ProfilePage {...props} user={user} authenticated={authenticated}/>
-                )}
-              />
-          )}
-          <Route path="/events" component={SearchPage} />
-          <Route exact path="/" component={LandingSplash} />
-        </Switch>
-      </main>
-      <Toaster />
     </div>
   );
 }
