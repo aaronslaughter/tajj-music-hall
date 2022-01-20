@@ -14,7 +14,7 @@ export default function NavBar({ authenticated, user, handleLogOut, pop, setPop 
         <NavLink to="/about" id="navItem">ABOUT</NavLink>
         <NavLink to='/events' id="navItem">EVENTS</NavLink>
         <NavLink to='/profile' id="navItem">PROFILE</NavLink>
-        <NavLink to='/update'>Update</NavLink>
+        {/* <NavLink to='/update'>Update</NavLink> */}
         <NavLink onClick={handleLogOut} to="/home" id="navItem">LOG OUT</NavLink>
       </nav>
     )

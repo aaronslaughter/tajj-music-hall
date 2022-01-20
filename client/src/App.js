@@ -13,6 +13,7 @@ import { CheckSession } from './services/Auth'
 import LogInOut from './components/LoginOut'
 import Update from './components/Update'
 import LandingSplash from './LandingSplash'
+import ProfilePage from './pages/ProfilePage'
 import toast, { Toaster } from 'react-hot-toast';
 
 function App() {
@@ -20,25 +21,24 @@ function App() {
   const [user, setUser] = useState(null)
   const [pop, setPop] = useState(false)
 
-
   const handleLogOut = () => {
     //Reset all auth related state and clear localstorage
-    setUser(null)
-    toggleAuthenticated(false)
-    localStorage.clear()
-  }
+    setUser(null);
+    toggleAuthenticated(false);
+    localStorage.clear();
+  };
   const checkToken = async () => {
-    const user = await CheckSession()
-    setUser(user)
-    toggleAuthenticated(true)
-  }
+    const user = await CheckSession();
+    setUser(user);
+    toggleAuthenticated(true);
+  };
 
   useEffect(() => {
-    const token = localStorage.getItem('token')
+    const token = localStorage.getItem('token');
     if (token) {
-      checkToken()
+      checkToken();
     }
-  }, [])
+  }, []);
 
   const notifyRegister = () => toast.success('Registered!', {
     duration: 4000,
@@ -76,33 +76,36 @@ function App() {
           <Route path="/login" component={(props) => <LogIn {...props} setPop={setPop} pop={pop} setUser={setUser}
             toggleAuthenticated={toggleAuthenticated} />} />
           <Route path="/register" component={Register} />
-          <Route path="/update" component={(props) => <Update {...props} user={user} handleLogOut={handleLogOut} />} />
-          <Route path="/events/:artistName/:eventCode" component={(props) =>
-            <EventPage
-              {...props}
-              user={user}
-              authenticated={authenticated}
-            />
-          } />
-          <Route path="/events" component={SearchPage} />
-          {
-            user && authenticated && (
-              <ProtectedRoute
-                authenticated={authenticated}
+          <Route
+            path="/update"
+            component={(props) => (
+              <Update {...props} user={user} handleLogOut={handleLogOut} />
+            )}
+          />
+          <Route
+            path="/events/:artistName/:eventCode"
+            component={(props) => (
+              <EventPage {...props} user={user} authenticated={authenticated} />
+            )}
+          />
+          <Route
+            path="/profile"
+            component={(props) => (
+              <ProfilePage
+                {...props}
                 user={user}
-                path="/events"
-                component={SearchPage}
+                authenticated={authenticated}
               />
-            )
-          }
-          <div>
-            <Route exact path="/" component={LandingSplash} />
-          </div>
+            )}
+          />
+
+          <Route path="/events" component={SearchPage} />
+          <Route exact path="/" component={LandingSplash} />
         </Switch>
       </main>
       <Toaster />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
