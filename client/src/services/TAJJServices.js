@@ -71,3 +71,11 @@ export const GetCommentsByEventCode = async (eventCode) => {
     throw error
   }
 }
+
+export const DeleteCommentById = async (commentId) => {
+  try {
+    await TAJJClient.delete(`/comments/${commentId}`)
+  } catch (error) {
+    throw error
+  }
+}
