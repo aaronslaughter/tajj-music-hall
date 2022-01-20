@@ -20,7 +20,6 @@ function App() {
   const [pop, setPop] = useState(false)
 
 
-  console.log(user)
   const handleLogOut = () => {
     //Reset all auth related state and clear localstorage
     setUser(null)
