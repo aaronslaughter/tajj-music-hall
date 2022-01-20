@@ -45,7 +45,7 @@ const EventDetailsCard = (props) => {
         </div>
         <div className='comments'>
           <AddComment {...props} user={props.user} authenticated={props.authenticated}/>
-          <Comments/>
+          <Comments {...props} user={props.user} authenticated={props.authenticated}/>
         </div>
       </div>  
     </div>

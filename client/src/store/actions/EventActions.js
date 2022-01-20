@@ -1,5 +1,5 @@
 import { FindAllEvents } from "../../services/BITServices"
-import { UserHasEvent, GetUsersFromEvent, GetCommentsByEventCode } from "../../services/TAJJServices"
+import { UserHasEvent, GetUsersFromEvent, GetCommentsByEventCode, DeleteCommentById } from "../../services/TAJJServices"
 import { 
   GET_EVENT_DETAILS, 
   IS_EVENT_FAVORITE, 
@@ -78,6 +78,16 @@ export const GetAllComments = (eventCode) => {
         type: GET_ALL_COMMENTS,
         payload: response
       })
+    } catch (error) {
+      throw error
+    }
+  }
+}
+
+export const DeleteComment = (commentId) => {
+  return async (dispatch) => {
+    try {
+      await DeleteCommentById(commentId)
     } catch (error) {
       throw error
     }
