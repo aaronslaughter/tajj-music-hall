@@ -17,6 +17,7 @@ import LandingSplash from './LandingSplash'
 import ProfilePage from './pages/ProfilePage'
 import toast, { Toaster } from 'react-hot-toast';
 import { LoadFavoriteEvents } from './store/actions/ProfileActions'
+import { LoadEvents } from './store/actions/DiscoverActions'
 
 function App(props) {
   const [authenticated, toggleAuthenticated] = useState(false)
@@ -41,6 +42,7 @@ function App(props) {
     if (token) {
       checkToken();
     }
+    props.fetchEvents()
   }, []);
 
   const notifyRegister = () => toast.success('Registered!', {
@@ -111,13 +113,14 @@ function App(props) {
   );
 }
 
-const mapStateToProps = ({ profileState }) => {
-  return { profileState }
+const mapStateToProps = ({ profileState, discoverState }) => {
+  return { profileState, discoverState }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchFavoriteEvents: (userId) => dispatch(LoadFavoriteEvents(userId))
+    fetchFavoriteEvents: (userId) => dispatch(LoadFavoriteEvents(userId)),
+    fetchEvents: () => dispatch(LoadEvents())
   }
 }
 

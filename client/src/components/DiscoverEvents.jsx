@@ -5,18 +5,18 @@ import EventCard from './EventCard'
 
 export const DiscoverEvents = (props) => {
 
-  useEffect(() => {
-    props.fetchEvents()
-  }, [])
-
   return (
     <div>
-      <EventCard event={props.discoverState.events[0]}/>
-      <EventCard event={props.discoverState.events[1]}/>
-      <EventCard event={props.discoverState.events[2]}/>
-      <EventCard event={props.discoverState.events[3]}/>
-      <EventCard event={props.discoverState.events[4]}/>
-      <EventCard event={props.discoverState.events[5]}/>
+      {props.discoverState.events.length === 6 &&
+      <div>
+        <EventCard artist={props.discoverState.events[0].artist} event={props.discoverState.events[0].event}/>
+        <EventCard artist={props.discoverState.events[1].artist} event={props.discoverState.events[1].event}/>
+        <EventCard artist={props.discoverState.events[2].artist} event={props.discoverState.events[2].event}/>
+        <EventCard artist={props.discoverState.events[3].artist} event={props.discoverState.events[3].event}/>
+        <EventCard artist={props.discoverState.events[4].artist} event={props.discoverState.events[4].event}/>
+        <EventCard artist={props.discoverState.events[5].artist} event={props.discoverState.events[5].event}/>
+      </div>
+      }
     </div>
   )
 }
