@@ -17,7 +17,6 @@ export default function LogIn(props) {
       props.setPop(!props.pop)
    }
 
-   console.log(props)
    return (
       <div className="login col">
          <div className="card-overlay centered">
