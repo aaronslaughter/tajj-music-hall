@@ -88,17 +88,16 @@ function App() {
               <EventPage {...props} user={user} authenticated={authenticated} />
             )}
           />
-          <Route
-            path="/profile"
-            component={(props) => (
-              <ProfilePage
-                {...props}
-                user={user}
+          {user && authenticated && (
+              <ProtectedRoute
                 authenticated={authenticated}
+                user={user}
+                path="/profile"
+                component={(props) => (
+                  <ProfilePage {...props} user={user} authenticated={authenticated}/>
+                )}
               />
-            )}
-          />
-
+          )}
           <Route path="/events" component={SearchPage} />
           <Route exact path="/" component={LandingSplash} />
         </Switch>
