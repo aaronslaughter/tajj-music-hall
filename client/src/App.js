@@ -17,7 +17,7 @@ import toast, { Toaster } from 'react-hot-toast';
 import TajjMuHall from './videos/TajjMuHall.mov'
 import BWlogoWhite from './assets/BWlogoWhite-8.png'
 
-function App(props) {
+function App() {
   const [authenticated, toggleAuthenticated] = useState(false)
   const [user, setUser] = useState(null)
   const [pop, setPop] = useState(false)
