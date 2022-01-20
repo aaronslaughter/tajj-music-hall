@@ -47,8 +47,7 @@ function App() {
 
       <main>
         <Switch>
-          <Route exact path="/" component={LandingSplash} />
-          <Route exact path="/homepage" component={HomePage} />
+          <Route path="/homepage" component={HomePage} />
           <Route path="/login" component={(props) => <LogIn {...props} setUser={setUser}
             toggleAuthenticated={toggleAuthenticated} />} />
           <Route path="/register" component={Register} />
@@ -71,6 +70,7 @@ function App() {
               />
             )
           }
+          <Route exact path="/" component={LandingSplash} />
 
         </Switch>
       </main>
