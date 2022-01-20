@@ -12,7 +12,7 @@ const AddComment = (props) => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     let eventId = await GetEventByEventCode(props.eventState.details.event.id)
-    await PostComment(eventId ,props.user.id,props.eventState.newComment)
+    await PostComment(eventId ,props.user.id, props.eventState.newComment.slice(0, 255))
     props.updateNewComment('')
     await props.getComments(props.match.params.eventCode)
   }
