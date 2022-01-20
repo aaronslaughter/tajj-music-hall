@@ -7,21 +7,21 @@ export const DiscoverEvents = async () => {
     let events = []
     let response = await BITClient.get(`/artists/Adele/events/?app_id=${process.env.REACT_APP_BIT_API_KEY}`)
     
-    events.push(response.data[0])
+    events.push({artist: response.data[0].artist, event: response.data[0]})
     response = await BITClient.get(`/artists/Dua Lipa/events/?app_id=${process.env.REACT_APP_BIT_API_KEY}`)
-    events.push(response.data[0])
+    events.push({artist: response.data[0].artist, event: response.data[0]})
     response = await BITClient.get(`/artists/Olivia Rodrigo/events/?app_id=${process.env.REACT_APP_BIT_API_KEY}`)
-    events.push(response.data[0])
+    events.push({artist: response.data[0].artist, event: response.data[0]})
     response = await BITClient.get(`/artists/The Weeknd/events/?app_id=${process.env.REACT_APP_BIT_API_KEY}`)
-    events.push(response.data[0])
+    events.push({artist: response.data[0].artist, event: response.data[0]})
     response = await BITClient.get(`/artists/Luke Combs/events/?app_id=${process.env.REACT_APP_BIT_API_KEY}`)
-    events.push(response.data[0])
+    events.push({artist: response.data[0].artist, event: response.data[0]})
     response = await BITClient.get(`/artists/Justin Bieber/events/?app_id=${process.env.REACT_APP_BIT_API_KEY}`)
-    events.push(response.data[0])
+    events.push({artist: response.data[0].artist, event: response.data[0]})
     
     events.forEach((element) => {
-      let date = new Date(element.datetime)
-      element.datetime = date.toDateString()
+      let date = new Date(element.event.datetime)
+      element.event.datetime = date.toDateString()
     })
 
     return events
