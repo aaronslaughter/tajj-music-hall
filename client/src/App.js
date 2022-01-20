@@ -55,8 +55,9 @@ function App() {
   return (
     <div className="App">
       {splash ? 
-      <div>
-        <img id="splashImage" src={BWlogoWhite}/>
+      <div className='splash'>
+        <p id="buttonSplash" onClick={() => setSplash(!splash)}>Enter</p>
+        <img id="splashImage" onClick={() => setSplash(!splash)} src={BWlogoWhite}/>
         <video id="splash" onClick={() => setSplash(!splash)} autoPlay muted loop src={TajjMuHall} width="100%"></video>
       </div> :
       <div>
