@@ -31,7 +31,6 @@ export default function Register(props) {
       })
       setFormValues(iState)
 
-      alert('Your account has been created!')
       // async function logInNow(){
       //    const payload = await LogInUser(formValues)
       //    setFormValues({ email: '', password: '' })
@@ -40,6 +39,7 @@ export default function Register(props) {
       //    props.history.push('/events')
       // }
       // logInNow()
+      props.notifyRegister()
       props.setForm(!props.form)
    }
 
