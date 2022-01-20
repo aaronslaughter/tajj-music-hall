@@ -44,7 +44,6 @@ const Register = async (request, respond) => {
 const UpdatePassword = async (request, respond) => {
    try {
       const { oldPassword, newPassword } = request.body
-      console.log(oldPassword)
       const user = await User.findByPk(request.params.user_id)
       if (
          user &&

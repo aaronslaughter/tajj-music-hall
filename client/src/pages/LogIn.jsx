@@ -15,9 +15,9 @@ export default function LogIn(props) {
       props.setUser(payload)
       props.toggleAuthenticated(true)
       props.setPop(!props.pop)
+      props.notifyLogin()
    }
 
-   console.log(props)
    return (
       <div className="login col">
          <div className="card-overlay centered">
