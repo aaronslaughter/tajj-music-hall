@@ -8,7 +8,7 @@ export const LoadFavoriteEvents = (userId) => {
       let favoriteEvents = [];
       const events = await getFavoriteEvents(userId);
 
-      events.map(async (element) => {
+      events.forEach(async (element) => {
         const response = await FindAllEvents(element.artist);
         let artist = response[0].artist;
         const event = response.find((e) => e.id === element.event_code);

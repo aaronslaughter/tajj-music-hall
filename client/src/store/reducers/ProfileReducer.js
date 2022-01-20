@@ -1,7 +1,7 @@
 import { GET_FAVORITE_EVENTS, FAVORITE_EVENT_DETAIL } from '../types';
 
 const initialState = {
-  events: []
+  events: null
 };
 
 const ProfileReducer = (state = initialState, action) => {

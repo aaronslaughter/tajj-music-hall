@@ -6,12 +6,12 @@ import { LoadFavoriteEvents } from '../store/actions/ProfileActions';
 const ProfilePage = (props) => {
 
   useEffect(() => {
-     props.fetchFavoriteEvents(props.user.id)
+      props.fetchFavoriteEvents(props.user.id)
   }, []);
 
   const handlesubmit = (e) => {
-   e.preventDefault();
-   props.history.push("/update")
+  e.preventDefault();
+  props.history.push("/update")
   };
 
   return (
@@ -25,7 +25,7 @@ const ProfilePage = (props) => {
         Change Password
       </button>
       <div className="favoriteEvents">
-        {props.profileState.events.map((element, index)=>(
+        {props.profileState.events && props.profileState.events.map((element, index)=>(
           <div key={index}>
             <EventCard event={element.event} artist={element.artist}/>
           </div>)
