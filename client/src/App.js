@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
 import { Route, Switch } from 'react-router'
-import { connect } from 'react-redux'
 import NavBar from './components/NavBar'
 import Register from './pages/Register'
 import LogIn from './pages/LogIn'
@@ -16,10 +15,8 @@ import Update from './components/Update'
 import LandingSplash from './LandingSplash'
 import ProfilePage from './pages/ProfilePage'
 import toast, { Toaster } from 'react-hot-toast';
-import { LoadFavoriteEvents } from './store/actions/ProfileActions'
-import { LoadEvents } from './store/actions/DiscoverActions'
 
-function App(props) {
+function App() {
   const [authenticated, toggleAuthenticated] = useState(false)
   const [user, setUser] = useState(null)
   const [pop, setPop] = useState(false)
@@ -34,7 +31,6 @@ function App(props) {
     const user = await CheckSession();
     setUser(user);
     toggleAuthenticated(true);
-    props.fetchFavoriteEvents(user.id)
   };
 
   useEffect(() => {
@@ -42,7 +38,6 @@ function App(props) {
     if (token) {
       checkToken();
     }
-    props.fetchEvents()
   }, []);
 
   const notifyRegister = () => toast.success('Registered!', {
@@ -67,8 +62,7 @@ function App(props) {
 
       {pop && ( <LogInOut 
         notifyRegister={notifyRegister} 
-        notifyLogin={notifyLogin}
-        fetchFavoriteEvents={props.fetchFavoriteEvents}
+        notifyLogin={notifyLogin} 
         pop={pop} setPop={setPop} 
         setUser={setUser} 
         user={user} 
@@ -94,15 +88,16 @@ function App(props) {
               <EventPage {...props} user={user} authenticated={authenticated} />
             )}
           />
-          {user && authenticated && (
-              <ProtectedRoute
-                authenticated={authenticated}
+          <Route
+            path="/profile"
+            component={(props) => (
+              <ProfilePage
+                {...props}
                 user={user}
-                path="/profile"
-                component={(props) => <ProfilePage {...props} user={user} authenticated={authenticated}/>}
+                authenticated={authenticated}
               />
-            )
-          }
+            )}
+          />
 
           <Route path="/events" component={SearchPage} />
           <Route exact path="/" component={LandingSplash} />
@@ -113,15 +108,4 @@ function App(props) {
   );
 }
 
-const mapStateToProps = ({ profileState, discoverState }) => {
-  return { profileState, discoverState }
-}
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-    fetchFavoriteEvents: (userId) => dispatch(LoadFavoriteEvents(userId)),
-    fetchEvents: () => dispatch(LoadEvents())
-  }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default App;

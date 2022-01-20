@@ -29,7 +29,7 @@ const HomePage = (props) => {
         </div>
       </div>
       <h1>FOLLOW YOUR FAVOURITE <br></br> STARS ON TOUR</h1>
-      <DiscoverEvents/>
+      {/* <DiscoverEvents/> */}
     </div>
   )
 }
