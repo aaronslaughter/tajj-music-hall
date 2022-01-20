@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom'
 const EventCard = ({event, artist}) => {
 
   return (
-    <div> 
+    <div>
       {event === undefined ? '' :
         <div>
           <img src={artist.thumb_url} alt={artist.name}/>

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Route, Switch } from 'react-router'
+import { connect } from 'react-redux'
 import NavBar from './components/NavBar'
 import Register from './pages/Register'
 import LogIn from './pages/LogIn'
@@ -15,8 +16,9 @@ import Update from './components/Update'
 import LandingSplash from './LandingSplash'
 import ProfilePage from './pages/ProfilePage'
 import toast, { Toaster } from 'react-hot-toast';
+import { LoadFavoriteEvents } from './store/actions/ProfileActions'
 
-function App() {
+function App(props) {
   const [authenticated, toggleAuthenticated] = useState(false)
   const [user, setUser] = useState(null)
   const [pop, setPop] = useState(false)
@@ -31,6 +33,7 @@ function App() {
     const user = await CheckSession();
     setUser(user);
     toggleAuthenticated(true);
+    props.fetchFavoriteEvents(user.id)
   };
 
   useEffect(() => {
@@ -62,7 +65,8 @@ function App() {
 
       {pop && ( <LogInOut 
         notifyRegister={notifyRegister} 
-        notifyLogin={notifyLogin} 
+        notifyLogin={notifyLogin}
+        fetchFavoriteEvents={props.fetchFavoriteEvents}
         pop={pop} setPop={setPop} 
         setUser={setUser} 
         user={user} 
@@ -88,16 +92,15 @@ function App() {
               <EventPage {...props} user={user} authenticated={authenticated} />
             )}
           />
-          <Route
-            path="/profile"
-            component={(props) => (
-              <ProfilePage
-                {...props}
-                user={user}
+          {user && authenticated && (
+              <ProtectedRoute
                 authenticated={authenticated}
+                user={user}
+                path="/profile"
+                component={(props) => <ProfilePage {...props} user={user} authenticated={authenticated}/>}
               />
-            )}
-          />
+            )
+          }
 
           <Route path="/events" component={SearchPage} />
           <Route exact path="/" component={LandingSplash} />
@@ -108,4 +111,14 @@ function App() {
   );
 }
 
-export default App;
+const mapStateToProps = ({ profileState }) => {
+  return { profileState }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    fetchFavoriteEvents: (userId) => dispatch(LoadFavoriteEvents(userId))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
