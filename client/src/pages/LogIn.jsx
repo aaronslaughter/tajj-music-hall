@@ -15,6 +15,7 @@ export default function LogIn(props) {
       props.setUser(payload)
       props.toggleAuthenticated(true)
       props.setPop(!props.pop)
+      props.notifyLogin()
    }
 
    return (
