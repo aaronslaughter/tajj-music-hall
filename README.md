@@ -32,7 +32,7 @@
 
 ### **_Technologies Used_**
 
-VS Code || Postgres || Express || REACT || NodeJS || Sequelize || Insomnia || Figma || Whimsical || Inkscape || SketchBook || Illustrator
+VS Code || Postgres || Express || REACT || NodeJS || Sequelize || Insomnia || Figma || Whimsical || Inkscape || SketchBook || Illustrator || FinalCut Pro
 
 ---
 
