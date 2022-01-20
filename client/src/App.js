@@ -17,7 +17,7 @@ import toast, { Toaster } from 'react-hot-toast';
 import TajjMuHall from './videos/TajjMuHall.mov'
 import BWlogoWhite from './assets/BWlogoWhite-8.png'
 
-function App() {
+function App(props) {
   const [authenticated, toggleAuthenticated] = useState(false)
   const [user, setUser] = useState(null)
   const [pop, setPop] = useState(false)
@@ -55,8 +55,9 @@ function App() {
   return (
     <div className="App">
       {splash ? 
-      <div>
-        <img id="splashImage" src={BWlogoWhite}/>
+      <div className='splash'>
+        <p id="buttonSplash" onClick={() => setSplash(!splash)}>Enter</p>
+        <img id="splashImage" onClick={() => setSplash(!splash)} src={BWlogoWhite}/>
         <video id="splash" onClick={() => setSplash(!splash)} autoPlay muted loop src={TajjMuHall} width="100%"></video>
       </div> :
       <div>
