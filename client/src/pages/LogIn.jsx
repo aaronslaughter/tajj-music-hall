@@ -14,7 +14,6 @@ export default function LogIn(props) {
       setFormValues({ email: '', password: '' })
       props.setUser(payload)
       props.toggleAuthenticated(true)
-      props.fetchFavoriteEvents(payload.id)
       props.setPop(!props.pop)
       props.notifyLogin()
    }

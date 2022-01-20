@@ -1,13 +1,17 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import EventCard from '../components/EventCard'
 import { LoadFavoriteEvents } from '../store/actions/ProfileActions';
 
 const ProfilePage = (props) => {
 
+  useEffect(() => {
+     props.fetchFavoriteEvents(props.user.id)
+  }, []);
+
   const handlesubmit = (e) => {
-  e.preventDefault();
-  props.history.push("/update")
+   e.preventDefault();
+   props.history.push("/update")
   };
 
   return (
@@ -21,15 +25,15 @@ const ProfilePage = (props) => {
         Change Password
       </button>
       <div className="favoriteEvents">
-        {props.profileState.events.map((element, index) => 
+        {props.profileState.events.map((element, index)=>(
           <div key={index}>
-            <EventCard event={element.event} artist={element.artist}></EventCard>
-          </div>
+            <EventCard event={element.event} artist={element.artist}/>
+          </div>)
         )}
       </div>
     </div>
-  )
-}
+  );
+};
 
 const mapStateToProps = ({ profileState }) => {
   return { profileState };

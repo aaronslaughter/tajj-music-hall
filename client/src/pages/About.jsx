@@ -1,5 +1,5 @@
 import React from 'react';
-import TajjMuHall from '../videos/TajjMuHall.mov'
+import TajjMuHall2 from '../videos/TajjMuHall2.mov'
 import { Link } from 'react-router-dom'
 import '../styles/About.css'
 
