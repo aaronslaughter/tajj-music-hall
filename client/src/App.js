@@ -4,6 +4,7 @@ import NavBar from './components/NavBar'
 import Register from './pages/Register'
 import LogIn from './pages/LogIn'
 import HomePage from './pages/HomePage'
+import About from './pages/About'
 import './styles/App.css'
 import ProtectedRoute from './components/ProtectedRoute'
 import SearchPage from './pages/SearchPage'
@@ -17,7 +18,7 @@ import toast, { Toaster } from 'react-hot-toast';
 function App() {
   const [authenticated, toggleAuthenticated] = useState(false)
   const [user, setUser] = useState(null)
-  const [pop, setPop] = useState (false)
+  const [pop, setPop] = useState(false)
 
 
   const handleLogOut = () => {
@@ -55,7 +56,7 @@ function App() {
         authenticated={authenticated}
         user={user}
         handleLogOut={handleLogOut}
-        pop={pop} 
+        pop={pop}
         setPop={setPop}
       />
 
@@ -70,8 +71,9 @@ function App() {
 
       <main>
         <Switch>
-          <Route exact path="/home" component={(props)=><HomePage {...props } setPop={setPop} pop={pop} user={user} toggleAuthenticated={toggleAuthenticated}  />} />
-          <Route path="/login" component={(props) => <LogIn {...props} setPop={setPop} pop={pop} setUser={setUser} 
+          <Route exact path="/home" component={(props) => <HomePage {...props} setPop={setPop} pop={pop} user={user} toggleAuthenticated={toggleAuthenticated} />} />
+          <Route path="/about" component={About} />
+          <Route path="/login" component={(props) => <LogIn {...props} setPop={setPop} pop={pop} setUser={setUser}
             toggleAuthenticated={toggleAuthenticated} />} />
           <Route path="/register" component={Register} />
           <Route path="/update" component={(props) => <Update {...props} user={user} handleLogOut={handleLogOut} />} />
@@ -83,7 +85,19 @@ function App() {
             />
           } />
           <Route path="/events" component={SearchPage} />
-          <Route exact path="/" component={LandingSplash} />
+          {
+            user && authenticated && (
+              <ProtectedRoute
+                authenticated={authenticated}
+                user={user}
+                path="/events"
+                component={SearchPage}
+              />
+            )
+          }
+          <div>
+            <Route exact path="/" component={LandingSplash} />
+          </div>
         </Switch>
       </main>
       <Toaster />

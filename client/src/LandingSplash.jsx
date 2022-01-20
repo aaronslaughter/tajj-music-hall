@@ -5,7 +5,6 @@ import TajjMuHall from '../src/videos/TajjMuHall.mov'
 
 export default function LandingSplash() {
 
-  //onclick go to homepage
 
   return (
 
@@ -15,5 +14,3 @@ export default function LandingSplash() {
     </div >
   )
 }
-
-// <Link to="/signup" className="btn btn-primary">Sign up</Link>

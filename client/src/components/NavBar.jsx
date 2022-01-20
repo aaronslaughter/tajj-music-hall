@@ -11,6 +11,7 @@ export default function NavBar({ authenticated, user, handleLogOut, pop, setPop 
     authenticatedOptions = (
       <nav>
         <NavLink to="/home" id="navItem">HOME</NavLink>
+        <NavLink to="/about" id="navItem">ABOUT</NavLink>
         <NavLink to='/events' id="navItem">EVENTS</NavLink>
         <NavLink to='/profile' id="navItem">PROFILE</NavLink>
         <NavLink to='/update'>Update</NavLink>
@@ -18,12 +19,13 @@ export default function NavBar({ authenticated, user, handleLogOut, pop, setPop 
       </nav>
     )
   }
-  function handleClickLogRegister(){
+  function handleClickLogRegister() {
     setPop(!pop)
   }
   const publicOptions = (
     <nav>
       <NavLink to="/home" id="navItem">HOME</NavLink>
+      <NavLink to="/about" id="navItem">ABOUT</NavLink>
       <NavLink to='/events' id="navItem">EVENTS</NavLink>
       <button className="buttonNav" onClick={handleClickLogRegister}>SignUp / LogIn</button>
     </nav>
