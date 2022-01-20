@@ -5,30 +5,27 @@ import BrandText from '../assets/BrandText-9.png'
 import '../styles/Nav.css'
 
 
-export default function NavBar({ authenticated, user, handleLogOut }) {
+export default function NavBar({ authenticated, user, handleLogOut, pop, setPop }) {
   let authenticatedOptions
   if (user) {
     authenticatedOptions = (
       <nav>
-        <h3>Welcome {user.name}!</h3>
-        <NavLink to="/homepage" id="navItem">HOME</NavLink>
+        <NavLink to="/" id="navItem">HOME</NavLink>
         <NavLink to='/events' id="navItem">EVENTS</NavLink>
         <NavLink to='/profile' id="navItem">PROFILE</NavLink>
         <NavLink to='/update'>Update</NavLink>
-
         <NavLink onClick={handleLogOut} to="/homepage" id="navItem">LOG OUT</NavLink>
       </nav>
     )
   }
-
+  function handleClickLogRegister(){
+    setPop(!pop)
+  }
   const publicOptions = (
     <nav>
-      <NavLink to="/homepage" id="navItem">HOME</NavLink>
+      <NavLink to="/home" id="navItem">HOME</NavLink>
       <NavLink to='/events' id="navItem">EVENTS</NavLink>
-      <NavLink to="/register" id="navItem">SIGN-UP</NavLink>
-      <NavLink to="/login" id="navItem">LOG-IN</NavLink>
-      <NavLink to='/update'>Update</NavLink>
-
+      <button className="buttonNav" onClick={handleClickLogRegister}>SignUp / LogIn</button>
     </nav>
   )
 

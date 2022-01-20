@@ -22,7 +22,7 @@ const SearchPage = (props) => {
     if (props.searchState.events) {
       return <ArtistCard artist={props.searchState.events[0].artist} events={props.searchState.events}/>
     } else if (props.searchState.searched) {
-      return <p id="pEvents">Oh no! There are no upcoming events for this artist :( </p>
+      return <p>Oh no! There are no upcoming events for this artist :( </p>
     } else {
       return ''
     }
@@ -35,7 +35,7 @@ const SearchPage = (props) => {
       <div className='SearchBar'>
         <form  id="searchBarElements" onSubmit={handleSubmit}>
           <input id="searchBox" type='text' placeholder='Search Artist'  value={props.searchState.searchTerm} onChange={handleChange}></input>
-          <button  id="searchButton" disabled={!props.searchState.searchTerm.length > 0}>O</button>
+          <button  id="searchButton" disabled={!props.searchState.searchTerm.length > 0}>Search</button>
         </form>
       </div>
       <div>

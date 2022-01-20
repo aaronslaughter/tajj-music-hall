@@ -14,7 +14,7 @@
 .popUpForm{
   background-color: rgb(255, 255, 255);
   width: 250px;
-  height:300px;
+  height:400px;
   padding: 30px;
   border-radius: 25px;
 }
@@ -27,6 +27,11 @@
 
 label {
   margin: 5px;
+}
+
+.BWlogo{ 
+  width: 100px ;
+  height: 100px;
 }
 
 .p {
