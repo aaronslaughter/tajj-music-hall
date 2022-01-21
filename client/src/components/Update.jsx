@@ -29,7 +29,7 @@ export default function Update(props) {
          confirmNewPassword: ''
       })
       props.handleLogOut()
-      props.history.push('/')
+      props.history.push('/login')
    }
 
    return (
