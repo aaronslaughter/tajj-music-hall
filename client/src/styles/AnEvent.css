@@ -2,21 +2,33 @@
 #pEvents{
   color: whitesmoke;
 }
+.backEvent{
+  color: rgb(0, 0, 0);
+  position: absolute;
+  padding: 0;
+}
+.backEvent:hover {
+  text-decoration: underline;
+  cursor: pointer;
+  font-weight: 620;
+}
 
 #HAnEvent{
-  margin: 0;
   padding: 0;
 }
 
 .AnEvent {
   padding: 50px 100px;
   display: grid;
+
 }
 .eventRender{
+  margin-top: 30px;
   grid-template-rows:  1fr 30px 1fr;
 }
 
 .eventCardInfo{
+  margin-top: 60px;
   display: flex;
   grid-row: 1;
 }
