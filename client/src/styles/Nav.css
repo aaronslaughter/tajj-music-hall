@@ -1,13 +1,30 @@
 *{
 justify-self: center;
 }
+
+
 .header{
+  position: absolute;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-family:sans-serif;
-  border-bottom: 2px solid rgba(128, 128, 128, 0.295);
+  z-index:3;
+  transform: translateX(85%);
   
+}
+
+.header:hover{
+  animation: right-to-left .2s ease-in forwards ;
+}
+
+@keyframes right-to-left {
+  100%{
+  transform: translateX(0%);
+  background-color: rgba(255, 255, 255, 0.61);
+
+  }
 }
 
 #navLogo{
@@ -15,11 +32,34 @@ justify-self: center;
   cursor: pointer;
   margin-left: 50px;
 
+  animation: shake .3s ease-in 2s  ;
+
 }
-#navLogo2{
-  width: 80px;
-  cursor: pointer;
+
+@keyframes shake {
+  0%{
+  transform: rotate(-10deg);
+
+  }
+  20%{
+  transform: rotate(10deg);
+  }
+  40%{
+  transform: rotate(-10deg);
+  
+  }
+  60%{
+  transform: rotate(10deg);
+  } 
+  80%{
+    transform: rotate(-10deg);
+  
+  }
+  100%{
+  transform: rotate(10deg);
+  }
 }
+
 
 .navigation{
   margin-right: 50px;
