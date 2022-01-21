@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import ArtistCard from '../components/ArtistCard'
 import { UpdateSearchTerm, LoadEvents, ResetSearchResults } from '../store/actions/SearchActions'
 import '../styles/Events.css'
-import pic1 from '../assets/EventsImageTop.png'
 import DiscoverEvents from '../components/DiscoverEvents'
 
 
