@@ -25,7 +25,7 @@ const ProfilePage = (props) => {
         Change Password
       </button>
       <div className="favoriteEvents">
-        {props.profileState.events && props.profileState.events.map((element, index)=>(
+        {props.profileState.events.length > 0 && props.profileState.events.map((element, index)=>(
           <div key={index}>
             <EventCard event={element.event} artist={element.artist}/>
           </div>)
