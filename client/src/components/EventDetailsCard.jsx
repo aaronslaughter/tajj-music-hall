@@ -42,7 +42,7 @@ const EventDetailsCard = (props) => {
       <h3>Who is attending?</h3>
         <div className='attendeesBox'>
           {props.eventState.attendees.map((element, index) => 
-            <div className="attendee" key={index} style={{backgroundColor: `rgb(${Math.floor(Math.random()*255)},${Math.floor(Math.random()*255)},${Math.floor(Math.random()*255)})`}}>
+            <div className="attendee" key={index} style={{backgroundColor: `rgb(${(index*50+200)%255},${(index*100-125)%255},${(index*200+50)%255}`}}>
               <h4 id='attendeeI'>{element.user_list[0].name.charAt(0)}</h4> {/* needs link to profile */}
             </div>
           )}
