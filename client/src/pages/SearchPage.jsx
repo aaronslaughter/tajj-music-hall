@@ -32,11 +32,18 @@ const SearchPage = (props) => {
     }
   }
 
+  // function animateSearcBar()
+  //   document. getElementById('.SearchBar').className='animateSearchBar'
+
+  // animateSearcBar()
+
+
+
   return (
     <div className='EventsPage'>
       {/* <img src={pic1} className='imageEvents'/> */}
       {/* <h1 className='eventsText'>WHAT ARTIST ARE <br></br>YOU SEEING NEXT?</h1> */}
-      <div className='SearchBar'>
+      <div id='SearchBar'>
           <form  id="searchBarElements" onSubmit={handleSubmit}>
             <input id="searchBox" type='text' placeholder='Search Artist'  value={props.searchState.searchTerm} onChange={handleChange}></input>
             <button  id="searchButton" onClick={() => setShow(false)} disabled={!props.searchState.searchTerm.length > 0}>Search</button>

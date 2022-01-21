@@ -10,7 +10,7 @@ const EventCard = ({event, artist}) => {
           {/* <div>{artist.name} - {event.datetime}</div> */}
           {/* <div>{event.venue.name} - {event.venue.location}</div> */}
           {/* <div>Tickets: {event.offers[0] === undefined ? 'Unavailable' : <div>{event.offers[0].status}</div>}</div> */}
-          <NavLink to={`/events/${artist.name}/${event.id}`}><img className='imageDiscoverArtist' src={artist.thumb_url} alt={artist.name}/></NavLink>
+          <NavLink to={`/events/${artist.name}/${event.id}`}><img className='imageDiscoverArtist' src={artist.image_url} alt={artist.name}/></NavLink>
         </div>
       }
     </div>

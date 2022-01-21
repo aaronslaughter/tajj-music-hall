@@ -4,6 +4,7 @@ import { IsFavorite, GetAttendees } from '../store/actions/EventActions'
 import { AddEventForUser } from '../services/TAJJServices'
 import AddComment from './AddComment'
 import Comments from './Comments'
+import { NavLink } from 'react-router-dom'
 
 const attendeeStyle = {
 
@@ -26,8 +27,8 @@ const EventDetailsCard = (props) => {
   return (
     
     <div className='eventRender'>
-      <h3  className='backEvent' onClick={()=>{}}>// all events</h3>
-
+      <NavLink to="/events"> <h3  className='backEvent' >// all events</h3></NavLink>
+ 
       <div className='eventCardInfo'>
       <img id="artistImg" src={props.eventState.details.artist.thumb_url} alt={props.eventState.details.artist.name}/>
         
