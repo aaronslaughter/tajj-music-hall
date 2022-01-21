@@ -22,15 +22,11 @@ const EventDetailsCard = (props) => {
     await props.getAttendees(props.match.params.eventCode)
   }
 
-  
   return (
-    
     <div className='eventRender'>
-      <h3  className='backEvent' onClick={()=>{}}>// all events</h3>
-
       <div className='eventCardInfo'>
-      <img id="artistImg" src={props.eventState.details.artist.thumb_url} alt={props.eventState.details.artist.name}/>
         
+      <img id="artistImg" src={props.eventState.details.artist.thumb_url} alt={props.eventState.details.artist.name}/>
         <div className='eventInfo2'>
           <div>
             <h1 id="HAnEvent">{props.eventState.details.artist.name}</h1>

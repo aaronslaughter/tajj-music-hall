@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import EventCard from '../components/EventCard'
 import { LoadFavoriteEvents } from '../store/actions/ProfileActions';
-import '../styles/User.css'
 
 const ProfilePage = (props) => {
 
@@ -16,7 +15,7 @@ const ProfilePage = (props) => {
   };
 
   return (
-    <div className='profile'>
+    <div>
       Profile Page
       <div className="userinfo">
         {props.user && <h3>User Name: {props.user.name}</h3>}

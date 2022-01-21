@@ -2,52 +2,37 @@
 .homePage{
   text-decoration: none;
   text-align: center;
-  background-color: black;
 }
 
-
-.Top{
-  background-color: black;
-}
+.Top {
+  display: grid;
+  background-color: white;
+} 
 
 #pic1 {
-  background-color: black;
-  position: absolute;
-  height: 100%;
   width: 100%;
-  object-fit: cover;
-  left:0;
-  z-index:1;
-  opacity: 40%;
-
+  height: 90%;
+  opacity: 60%;
 }
 
-.homeRender{
+.TopOver{
   position: absolute;
-  top: 80px;
-  display: flex;
-  z-index:2;
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: start
 }
 
 #BigLogo{
-  width: 40%;
-  height: 40%;
-  animation: fadeIn  ease-in 1s forwards;
-  margin-left: 50px;
-  }
-
-#homeBox{
-width: 50%;
+  width: 100%;
+  grid-column: 1;
+  grid-row: 1;
 }
 
-.BrandText{
-  width: 40%;
-  animation: fadeIn  ease-in 1s forwards ;
-
-}
-.BrandTextInfo{
-
-  animation: fadeIn  ease-in 1s forwards;
+#BrandText{
+  grid-column: 2;
+  grid-row: 1;
+  width: 90%;
+  height: auto;
 }
 
 .actionButton{
@@ -60,21 +45,19 @@ width: 50%;
   color:white;
   border-radius: 25px;
   box-shadow:  5px 5px 10px rgba(0, 0, 0, 0.5);
-  animation: fadeIn  ease-in 1s forwards;
-
 
   
 }
 
 .actionButton:hover{
   cursor: pointer;
-  background-color: rgba(163, 4, 168, 0.979);
-  border: 1px solid purple;
+  font-weight: 600;
+  background-color: rgb(244, 145, 253);
 }
 
 
 h1 {
-  padding:  0 50px 0 50px;
+  padding: 50px;
   font-size: 36px
 }
 

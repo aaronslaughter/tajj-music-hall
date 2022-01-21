@@ -24,7 +24,6 @@ const AddComment = (props) => {
           onChange={handleChange} 
           type="text" 
           placeholder="Add Comment" 
-          maxLength="255"
           name="newComment"
           value={props.eventState.newComment}>
         </input>
