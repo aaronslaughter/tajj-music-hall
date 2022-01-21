@@ -30,13 +30,15 @@ const SearchPage = (props) => {
 
   return (
     <div className='EventsPage'>
-      <img src={pic1} className='imageEvents'/>
-      <h1 className='eventsText'>WHAT ARTIST ARE <br></br>YOU SEEING NEXT?</h1>
-      <div className='SearchBar'>
-        <form  id="searchBarElements" onSubmit={handleSubmit}>
-          <input id="searchBox" type='text' placeholder='Search Artist'  value={props.searchState.searchTerm} onChange={handleChange}></input>
-          <button  id="searchButton" disabled={!props.searchState.searchTerm.length > 0}>Search</button>
-        </form>
+      <div id='SearchBar'>
+          <form  id="searchBarElements" onSubmit={handleSubmit}>
+            <input id="searchBox" type='text' placeholder='Search Artist'  value={props.searchState.searchTerm} onChange={handleChange}></input>
+            <button  id="searchButton" onClick={() => setShow(false)} disabled={!props.searchState.searchTerm.length > 0}>Search</button>
+          </form>
+      </div>
+      {show ?
+      <div>
+        <DiscoverEvents/>
       </div>
       <div>
         {renderArtistResults()}
