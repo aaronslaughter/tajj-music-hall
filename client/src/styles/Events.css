@@ -20,15 +20,25 @@
 
 }
 
-.SearchBar {
+#SearchBar {
   position: absolute;
   text-align: center;
   padding: 20px;
   margin-top: 320px;
   display: flex;
   flex-direction: column;
+  z-index: 3;
+  background-color: white;
+  border-radius: 20px;
+  top: 20%;
+  left:50%;
+  transform: translate(-50%, -50%);
+  z-index:1;
+  border: 1px solid rgb(211, 211, 211);
 }
-
+.animateSearchBar{
+  background-color: blueviolet;
+}
 #searchBox{
   width: 420px;
   height: 30px;
@@ -66,8 +76,10 @@
 }
 
 .artistProfile {
-  margin-right: 30px;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 180px 20px 0px 0px;
 }
 
 #artistImage {
@@ -85,6 +97,13 @@
   color: rgb(0, 0, 0);
   font-weight: bold;
   margin-bottom: 30px;
+}
+
+
+.artistsEvents{
+  margin-top: 40px;
+  display:  grid;
+  grid-template-columns: 1fr 1fr ;
 }
 
 .eventCard {
