@@ -17,6 +17,7 @@ const HomePage = (props) => {
     props.history.push('/events')
 
   }
+  
   return (
     <div className='homePage'>
       <div className='Top'>
