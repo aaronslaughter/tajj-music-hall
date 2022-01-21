@@ -4,26 +4,29 @@
 
 ##### An event locator, planner and social app all in one, with a huge library of concert venues that users can access anywhere.
 
+<br>
+
 ---
 
+#### Created on
+
+###### 01/13/2022
+
+#### by:
+
+### [Terra Smith](https://github.com/Terra-06) - Genuine Music Master, Visual Coordinator & Authentication Consultant
+
+### [Aaron Slaughter](https://github.com/aaronslaughter) - Github Conductor, Redux Maestro & Troubleshooting Specialist
+
+### [Jane Wang](https://github.com/janemzwangnj) - Backend Virtuoso & Profile Analyst
+
+### [Julio Rodriguez](https://github.com/julior0518) - Design Aficionado & Styling Expert
+
 <br>
-#### Created by:
-
-### [Terra Smith](https://github.com/Terra-06) - Music Master
-
-### [Aaron Slaughter](https://github.com/aaronslaughter) - Github Specialist
-
-### [Jane Wang](https://github.com/janemzwangnj) - Backend Wizard
-
-### [Julio Rodriguez](https://github.com/julior0518) - Design Guy
-
-##### 01/13/2022
 
 ### [TAJJ Music Hall APP](https://tajjmusichall.herokuapp.com/) || [TRELLO](https://trello.com/b/TRZnDhfF/tajj-music-hall)
 
-<br>
-
----
+## <br>
 
 ## **_Description_**
 
@@ -83,7 +86,7 @@ VS Code || Postgres || Express || REACT || NodeJS || Sequelize || Insomnia || Fi
 
 ##### **_Jane Wang_** - Server side Back-end Specialist; Profile Guru; troubleshooting and debugging helper. <br><br>
 
-##### **_Julio Rodriguez_** - Creator of the pop up windows and all things Design; Front-end and back-end troubleshooting and debugging.
+##### **_Julio Rodriguez_** - Creator of the pop up windows and all things Design; Front-end, back-end, troubleshooting and debugging.
 
 <img src=img2/Tajj_team.png alt="Tajj-event-page" width="550" />
 <br>
