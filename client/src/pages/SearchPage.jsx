@@ -1,12 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { connect } from 'react-redux'
 import ArtistCard from '../components/ArtistCard'
 import { UpdateSearchTerm, LoadEvents, ResetSearchResults } from '../store/actions/SearchActions'
 import '../styles/Events.css'
 import pic1 from '../assets/EventsImageTop.png'
+import DiscoverEvents from '../components/DiscoverEvents'
+
 
 
 const SearchPage = (props) => {
+  const [show, setShow] = useState(true)
+
 
   const handleChange = (e) => {
     props.updateSearchTerm(e.target.value)
@@ -30,17 +34,27 @@ const SearchPage = (props) => {
 
   return (
     <div className='EventsPage'>
-      <img src={pic1} className='imageEvents'/>
-      <h1 className='eventsText'>WHAT ARTIST ARE <br></br>YOU SEEING NEXT?</h1>
+      {/* <img src={pic1} className='imageEvents'/> */}
+      {/* <h1 className='eventsText'>WHAT ARTIST ARE <br></br>YOU SEEING NEXT?</h1> */}
       <div className='SearchBar'>
-        <form  id="searchBarElements" onSubmit={handleSubmit}>
-          <input id="searchBox" type='text' placeholder='Search Artist'  value={props.searchState.searchTerm} onChange={handleChange}></input>
-          <button  id="searchButton" disabled={!props.searchState.searchTerm.length > 0}>Search</button>
-        </form>
-      </div>
+          <form  id="searchBarElements" onSubmit={handleSubmit}>
+            <input id="searchBox" type='text' placeholder='Search Artist'  value={props.searchState.searchTerm} onChange={handleChange}></input>
+            <button  id="searchButton" onClick={() => setShow(false)} disabled={!props.searchState.searchTerm.length > 0}>Search</button>
+          </form>
+        </div>
+      {show ?
       <div>
-        {renderArtistResults()}
+        <DiscoverEvents/>
+        
       </div>
+      :
+      <div>
+        <h3  className='backEvent2' onClick={()=>setShow(!show)}>// all events</h3>
+        <div className='SearchResult'>
+          {renderArtistResults()}
+        </div>
+      </div>
+      }
     </div>
   )
 }

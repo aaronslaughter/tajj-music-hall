@@ -12,7 +12,7 @@ export const DiscoverEvents = (props) => {
   return (
     <div>
       {props.discoverState.events.length === 6 &&
-      <div>
+      <div className='renderDiscover'>
         <EventCard artist={props.discoverState.events[0].artist} event={props.discoverState.events[0].event}/>
         <EventCard artist={props.discoverState.events[1].artist} event={props.discoverState.events[1].event}/>
         <EventCard artist={props.discoverState.events[2].artist} event={props.discoverState.events[2].event}/>
