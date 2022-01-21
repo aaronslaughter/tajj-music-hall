@@ -4,6 +4,7 @@ import ArtistCard from '../components/ArtistCard'
 import { UpdateSearchTerm, LoadEvents, ResetSearchResults } from '../store/actions/SearchActions'
 import '../styles/Events.css'
 import DiscoverEvents from '../components/DiscoverEvents'
+
 const SearchPage = (props) => {
   const [show, setShow] = useState(true)
   const handleChange = (e) => {
