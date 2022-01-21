@@ -3,8 +3,6 @@ import { connect } from 'react-redux'
 import { LoadEvent, IsFavorite, GetAttendees, GetAllComments } from '../store/actions/EventActions'
 import EventDetailsCard from '../components/EventDetailsCard'
 import '../styles/AnEvent.css'
-
-
 export const EventPage = (props) => {
 
   useEffect(() => {

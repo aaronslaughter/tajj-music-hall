@@ -9,3 +9,25 @@
 	overflow: hidden;
 	cursor: grab;
 }
+
+.about_text1 {
+	color: rgb(194, 194, 79);
+	font-size: 25px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+.about_text2 {
+	color: rgb(20, 198, 198);
+	font-size: 25px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+.about_text3 {
+	color: rgb(252, 1, 244);
+	font-size: 25px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}

@@ -13,7 +13,7 @@ const ArtistCard = ({artist, events}) => {
         </div>
       }
       {events.length === undefined ? 'No Upcoming Events' : 
-        <div className='artistsEvents'>
+        <div>
           {events.map((element, index) =>
             <div key={index} className='eventCard'>
               <div className='eventInner'>

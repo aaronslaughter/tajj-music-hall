@@ -23,15 +23,12 @@ const EventDetailsCard = (props) => {
     await props.getAttendees(props.match.params.eventCode)
   }
 
-  
   return (
-    
     <div className='eventRender'>
       <NavLink to="/events"> <h3  className='backEvent' >// all events</h3></NavLink>
- 
       <div className='eventCardInfo'>
-      <img id="artistImg" src={props.eventState.details.artist.thumb_url} alt={props.eventState.details.artist.name}/>
         
+      <img id="artistImg" src={props.eventState.details.artist.thumb_url} alt={props.eventState.details.artist.name}/>
         <div className='eventInfo2'>
           <div>
             <h1 id="HAnEvent">{props.eventState.details.artist.name}</h1>
@@ -47,7 +44,7 @@ const EventDetailsCard = (props) => {
       <h3>Who is attending?</h3>
         <div className='attendeesBox'>
           {props.eventState.attendees.map((element, index) => 
-            <div className="attendee" key={index} style={{backgroundColor: `rgb(${Math.floor(Math.random()*255)},${Math.floor(Math.random()*255)},${Math.floor(Math.random()*255)})`}}>
+            <div className="attendee" key={index} style={{backgroundColor: `rgb(${(index*50+200)%255},${(index*100-125)%255},${(index*200+50)%255}`}}>
               <h4 id='attendeeI'>{element.user_list[0].name.charAt(0)}</h4> {/* needs link to profile */}
             </div>
           )}
