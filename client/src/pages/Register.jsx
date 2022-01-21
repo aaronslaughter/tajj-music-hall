@@ -1,7 +1,5 @@
 import React, { useState } from 'react'
 import { RegisterUser } from '../services/Auth'
-import { LogInUser } from '../services/Auth'
-
 
 const iState = {
    name: '',
@@ -30,15 +28,6 @@ export default function Register(props) {
          password: formValues.password
       })
       setFormValues(iState)
-
-      // async function logInNow(){
-      //    const payload = await LogInUser(formValues)
-      //    setFormValues({ email: '', password: '' })
-      //    props.setUser(payload)
-      //    props.toggleAuthenticated(true)
-      //    props.history.push('/events')
-      // }
-      // logInNow()
       props.notifyRegister()
       props.setForm(!props.form)
    }

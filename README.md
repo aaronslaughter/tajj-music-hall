@@ -4,26 +4,29 @@
 
 ##### An event locator, planner and social app all in one, with a huge library of concert venues that users can access anywhere.
 
+<br>
+
 ---
 
+#### Created on
+
+###### 01/13/2022
+
+#### by:
+
+### [Terra Smith](https://github.com/Terra-06) - Genuine Music Master, Visual Coordinator & Authentication Consultant
+
+### [Aaron Slaughter](https://github.com/aaronslaughter) - Github Conductor, Redux Maestro & Troubleshooting Specialist
+
+### [Jane Wang](https://github.com/janemzwangnj) - Backend Virtuoso & Profile Analyst
+
+### [Julio Rodriguez](https://github.com/julior0518) - Design Aficionado & Styling Expert
+
 <br>
-#### Created by:
-
-### [Terra Smith](https://github.com/Terra-06) - Music Master
-
-### [Aaron Slaughter](https://github.com/aaronslaughter) - Github Specialist
-
-### [Jane Wang](https://github.com/janemzwangnj) - Backend Wizard
-
-### [Julio Rodriguez](https://github.com/julior0518) - Design Guy
-
-##### 01/13/2022
 
 ### [TAJJ Music Hall APP](https://tajjmusichall.herokuapp.com/) || [TRELLO](https://trello.com/b/TRZnDhfF/tajj-music-hall)
 
-<br>
-
----
+## <br>
 
 ## **_Description_**
 
@@ -34,9 +37,11 @@
 ---
 
 <br>
+
 ### **_Technologies Used_**
 
-VS Code || Postgres || Express || REACT || NodeJS || Sequelize || Insomnia || Figma || Whimsical || Inkscape || SketchBook || Illustrator || FinalCut Pro
+VS Code || Postgres || Express || REACT || NodeJS || Sequelize || Insomnia || Figma || Whimsical || Illustrator || FinalCut Pro
+
 <br>
 
 ---
@@ -67,7 +72,9 @@ VS Code || Postgres || Express || REACT || NodeJS || Sequelize || Insomnia || Fi
 
 #### Upon verification, the user is then directed to a list of concerts and music events happening within their city. <br><br>
 
-#### The user is given a few options to choose from in accordance to the **_artist_**, **_band_**, or **_festival_** they are interested in. Once decided, the user is directed towards a ticket purchase page, and is also able to find other people in their area who are attending the same event.<br><br>
+#### The user is given a few options to choose from in accordance to the **_artist_**, **_band_**, or **_festival_** they are interested in. Once decided, the user favorites their decision and is then directed towards a ticket purchase page.<br><br>
+
+#### The user is also able to find other people in their area who are attending the same event.<br><br>
 
 #### The user can then plan a meet and greet, update their profile, as well as supply a review/comment in regards to the concert or event.<br><br>
 
@@ -83,9 +90,10 @@ VS Code || Postgres || Express || REACT || NodeJS || Sequelize || Insomnia || Fi
 
 ##### **_Jane Wang_** - Server side Back-end Specialist; Profile Guru; troubleshooting and debugging helper. <br><br>
 
-##### **_Julio Rodriguez_** - Creator of the pop up windows and all things Design; Front-end and back-end troubleshooting and debugging.
+##### **_Julio Rodriguez_** - Creator of the pop up windows and all things Design; Front-end, back-end, troubleshooting and debugging.
 
 <img src=img2/Tajj_team.png alt="Tajj-event-page" width="550" />
+
 <br>
 
 ---

@@ -32,14 +32,12 @@ export default function NavBar({ authenticated, user, handleLogOut, pop, setPop 
   )
 
   return (
-    <header >
-      <div className='header' >
+    <header className='header'>
       <NavLink to="/">
         <img src={logo} alt="Tajj" id='navLogo' />
+        <img src={BrandText} alt="Tajj" id='navLogo2' />
       </NavLink>
       <div className='navigation'>{authenticated && user ? authenticatedOptions : publicOptions}</div>
-      
-      </div >
     </header>
   )
 }
