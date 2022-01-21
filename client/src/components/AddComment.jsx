@@ -12,22 +12,22 @@ const AddComment = (props) => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     let eventId = await GetEventByEventCode(props.eventState.details.event.id)
-    await PostComment(eventId ,props.user.id,props.eventState.newComment)
+    await PostComment(eventId ,props.user.id, props.eventState.newComment.slice(0, 255))
     props.updateNewComment('')
     await props.getComments(props.match.params.eventCode)
   }
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
-        <input 
+      <form  className="if" onSubmit={handleSubmit}>
+        <input  className='inputfieldComment'
           onChange={handleChange} 
           type="text" 
           placeholder="Add Comment" 
           name="newComment"
           value={props.eventState.newComment}>
         </input>
-        <button disabled={!props.eventState.newComment ||
+        <button  className="ifButton" disabled={!props.eventState.newComment ||
           !props.user ||
           !props.authenticated ||
           !props.eventState.isFavorite}>

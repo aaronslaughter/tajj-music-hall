@@ -1,34 +1,43 @@
-# **_TAJJ Music Hall_**
+# **_TAJJ Mu'Hall_**
 
-<img src=img2/concert.jpg alt="concert" width="450" />
+<img src=img2/Tajj_03.png alt="concert" width="450" />
 
 ##### An event locator, planner and social app all in one, with a huge library of concert venues that users can access anywhere.
 
 ---
 
-#### Created By: Aaron Slaughter; Jane Wang; Julio Rodriguez and Terra Smith
+<br>
+#### Created by:
+
+### [Terra Smith](https://github.com/Terra-06) - Music Master
+
+### [Aaron Slaughter](https://github.com/aaronslaughter) - Github Specialist
+
+### [Jane Wang](https://github.com/janemzwangnj) - Backend Wizard
+
+### [Julio Rodriguez](https://github.com/julior0518) - Design Guy
 
 ##### 01/13/2022
 
-### [Terra - GitHub](https://www.github/.com) || [LinkedIn](https://www.linkedin.com) || [TAJJ Music Hall APP](https://.com) || [TRELLO](https://trello.com/b/TRZnDhfF/tajj-music-hall)
+### [TAJJ Music Hall APP](https://tajjmusichall.herokuapp.com/) || [TRELLO](https://trello.com/b/TRZnDhfF/tajj-music-hall)
 
-### [Julio - GitHub](https://github.com/julior0518)
-
-### [Aaron - GitHub](https://github.com/aaronslaughter)
+<br>
 
 ---
 
 ## **_Description_**
 
-#### TAJJ Music Hall is a concert event social app, essentially geared towards assistance with finding music events and locating other users that will attend the same function. Users can access this large database whenever they need to find a local event and meet-up with friends, or even strangers with similar tastes in music. <br>
+#### TAJJ Music Hall is a concert event social app, essentially geared towards assistance with finding music events and locating other users that will attend the same function. Users can access this large database whenever they need to find a local event and meet-up with friends, or even potential future friends with whom share similar tastes in music. <br>
 
-<img src=img2/crowd.jpg alt="crowd at a concert" width="450" />
+<img src=img2/Tajj_homepg.png alt="crowd at a concert" width="450" />
 
 ---
 
-### **_Technology Used_**
+<br>
+### **_Technologies Used_**
 
-VS Code|| Postgres || Express || REACT || NodeJS || Sequelize || Insomnia || Figma || Whimsical || Inkscape || SketchBook
+VS Code || Postgres || Express || REACT || NodeJS || Sequelize || Insomnia || Figma || Whimsical || Inkscape || SketchBook || Illustrator || FinalCut Pro
+<br>
 
 ---
 
@@ -38,11 +47,11 @@ VS Code|| Postgres || Express || REACT || NodeJS || Sequelize || Insomnia || Fig
 
 ---
 
-<img src=img2/man.jpg alt="man playing guitar" width="275" />
+<img src=img2/Tajj_01.png alt="man playing guitar" width="450" />
 
 ---
 
-## **_Benefits of a Music Event Social App:_**
+### **_Benefits of a Music Event Social App:_**
 
 -  Instant access to up and coming local acts.
 -  Careful planning and chance to meet others.
@@ -50,30 +59,37 @@ VS Code|| Postgres || Express || REACT || NodeJS || Sequelize || Insomnia || Fig
 
 ---
 
+## **_How TAJJ Mu'Hall works_**
+
+<img src=img2/Tajj_02.png alt="man playingcrowd at concert" width="250" />
+
+#### A user either logs in or creates a new account.<br><br>
+
+#### Upon verification, the user is then directed to a list of concerts and music events happening within their city. <br><br>
+
+#### The user is given a few options to choose from in accordance to the **_artist_**, **_band_**, or **_festival_** they are interested in. Once decided, the user is directed towards a ticket purchase page, and is also able to find other people in their area who are attending the same event.<br><br>
+
+#### The user can then plan a meet and greet, update their profile, as well as supply a review/comment in regards to the concert or event.<br><br>
+
+<img src=img2/Tajj_04.png alt="Tajj-event-page" width="550" />
+
 ---
 
-## **_How TAJJ Music Hall works_**
+## **_*Contributions*_**
 
-<img src=img2/party.jpg alt="crowd at concert" width="450" />
+##### **_Terra Smith_** - Music & video technician; Authentication correlation; README resolution; troubleshooting and debugging assistance. <br><br>
 
-#### A user logs in and creates an account. Upon verification, user is then directed to a list of concerts and music events happening within their city. The user is given a few options to choose from in accordance to the Artist or Band they are interested in. Once decided, the user is directed towards a ticket purchase page, and is also able to find other people in their area who are also attending the same event, and the user can then plan a meet and greet, as well as supply a review/comment in regards to the concert.
+##### **_Aaron Slaughter_** - React App front-end Redux coordinator; Github management; troubleshooting and debugging extraordinaire. <br><br>
 
-<img src=img2/show.jpg alt="concert footage" width="450" />
+##### **_Jane Wang_** - Server side Back-end Specialist; Profile Guru; troubleshooting and debugging helper. <br><br>
 
----
+##### **_Julio Rodriguez_** - Creator of the pop up windows and all things Design; Front-end and back-end troubleshooting and debugging.
 
-### **_Future Updates_**
-
-##### - [ ] Update How the app works
-
-##### - [ ] Add images of the app
-
-##### - [ ] Update ReadMe
-
-##### - [ ] TBD
+<img src=img2/Tajj_team.png alt="Tajj-event-page" width="550" />
+<br>
 
 ---
 
 #### **_Credits_**
 
-Images: [Pixabay](https://www.pixabay.com/)
+Images:[Tajj Mu'Hall](https://tajjmusichall.herokuapp.com/)

@@ -48,21 +48,21 @@ const UpdatePassword = async (request, respond) => {
       if (
          user &&
          (await middleware.comparePassword(
-            user.dataValues.password_digest,
-            oldPassword
-         ))
-      ) {
+            user.password_digest, request.body.oldPassword))) {
+
          let password_digest = await middleware.hashPassword(newPassword)
-         await user.update({ password_digest })
-         return respond.send({ status: 'Ok', payload: user })
+         await User.update({ password_digest: password_digest, updatedAt: new Date() }, { where: { id: request.params.user_id } })
+         return respond.send({ status: 'Ok' })
+
       }
-      respond.status(401).send({ status: 'Error', msg: 'Unauthorized' })
-   } catch (error) { }
+   } catch (error) {
+      throw error
+   }
 }
 
-const CheckSession = async (request, respond) => {
-   const { payload } = respond.locals
-   respond.send(payload)
+const CheckSession = async (req, res) => {
+   const { payload } = res.locals
+   res.send(payload)
 }
 
 module.exports = {

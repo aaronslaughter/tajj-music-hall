@@ -4,8 +4,6 @@ import { LogInUser } from '../services/Auth'
 export default function LogIn(props) {
    const [formValues, setFormValues] = useState({ email: '', password: '' })
 
-
-
    const handleChange = (e) => {
       setFormValues({ ...formValues, [e.target.name]: e.target.value })
    }
@@ -16,7 +14,8 @@ export default function LogIn(props) {
       setFormValues({ email: '', password: '' })
       props.setUser(payload)
       props.toggleAuthenticated(true)
-      props.history.push('/events')
+      props.setPop(!props.pop)
+      props.notifyLogin()
    }
 
    return (

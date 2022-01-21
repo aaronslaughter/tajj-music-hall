@@ -41,8 +41,11 @@
   height: 40px;
   grid-column: 2;
   border: none;
-  background-color: rgb(240, 71, 255);
+  background-color: rgb(128, 5, 133);
+  color:white;
   border-radius: 25px;
+  box-shadow:  5px 5px 10px rgba(0, 0, 0, 0.5);
+
   
 }
 
