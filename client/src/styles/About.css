@@ -11,21 +11,21 @@
 }
 
 .about_text1 {
-	color: rgba(255, 255, 0, 0.9);
+	color: rgb(194, 194, 79);
 	font-size: 25px;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
 }
 .about_text2 {
-	color: rgba(13, 249, 249, 0.9);
+	color: rgb(20, 198, 198);
 	font-size: 25px;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
 }
 .about_text3 {
-	color: rgba(252, 1, 244, 0.9);
+	color: rgb(252, 1, 244);
 	font-size: 25px;
 	display: flex;
 	flex-wrap: wrap;
