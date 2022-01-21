@@ -1,9 +1,27 @@
 
 
 
-.EventsPage {
+
+
+.renderDiscover{
   display: grid;
-  min-height: 500px
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 100vw;
+  padding: 2px 0;
+}
+
+.discoverArtist{
+  margin: 0px 4px;
+}
+.imageDiscoverArtist{
+  height: 49vh;
+  width: 33vw;
+  object-fit: cover;
+  filter: saturate(30%)
+
+}
+.imageDiscoverArtist:hover{
+  filter: saturate(150%)
 }
 
 .imageEvents {
@@ -20,38 +38,38 @@
 
 }
 
-#SearchBar {
+
+
+.SearchBar {
   position: absolute;
   text-align: center;
-  padding: 20px;
-  margin-top: 320px;
   display: flex;
   flex-direction: column;
   z-index: 3;
   background-color: white;
   border-radius: 20px;
-  top: 20%;
+  top: 50%;
   left:50%;
   transform: translate(-50%, -50%);
   z-index:1;
+
   border: 1px solid rgb(211, 211, 211);
 }
-.animateSearchBar{
-  background-color: blueviolet;
-}
+
 #searchBox{
-  width: 420px;
-  height: 30px;
+  width: 300px;
+  height: 28px;
   padding-left: 20px;
   border-radius: 25px;
-  border: 1px solid white;
+  border: 4px solid white;
+
 
 }
 #searchBox:hover{
-  background-color: rgba(255, 255, 255, 0.774);
+  background-color: rgba(126, 126, 126, 0.24);
 }
 #searchButton{
-  height: 35px;
+  height: 34px;
   width: 100px;
   border-radius: 360px;
   margin-left: 10px;
@@ -60,10 +78,12 @@
   cursor: pointer;
   border: 1px solid white;
   font-weight: 700;
+  border: 4px solid white;
+
 }
 
 #searchButton:hover{
-  background-color: rgba(94, 94, 94, 0.733);
+  background-color: rgba(94, 94, 94, 0.295);
 
 }
 .results {
@@ -71,6 +91,7 @@
   padding:20px;
   display: flex;
   flex-wrap: wrap;
+  flex-direction: column;
   justify-content: center;
 
 }
@@ -79,19 +100,31 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 180px 20px 0px 0px;
+  margin: 90px 20px 20px 0px;
+
 }
 
 #artistImage {
-  width: 180px;
+  width: 100px;
   border-radius: 360px;
   border: 4px solid rgb(128, 5, 133);
   margin-bottom: 20px;
+  margin-right: 20px;
   box-shadow:  0px 10px 10px rgb(119, 119, 119);
 
 }
 
+.backEvent2{position: absolute;
+  padding: 60px 0  0 100px;
+  font-size: 18px;
+  font-weight: 600;
+}
+.backEvent2:hover{
+  text-decoration: underline;
+  cursor: pointer;
+  font-weight: 620;
 
+}
 #artistName {
   font-size: xx-large;
   color: rgb(0, 0, 0);
@@ -99,9 +132,8 @@
   margin-bottom: 30px;
 }
 
-
 .artistsEvents{
-  margin-top: 40px;
+  margin-top: 100px;
   display:  grid;
   grid-template-columns: 1fr 1fr ;
 }
@@ -112,16 +144,17 @@
   color: black;
   border-radius: 20px;
   text-align: right;
+  width: 80%;
 }
 
 .eventInner{
-  background-color: rgb(221, 221, 221);
+  background-color: rgb(245, 245, 245);
   margin-bottom: 15px;
   padding: 10px 20px;
   color: rgb(0, 0, 0);
   border-radius: 15px;
   text-align: left;
-  box-shadow:  5px 5px 10px rgb(114, 114, 114);
+  box-shadow:  10px 10px 30px rgba(114, 114, 114, 0.548);
   
 }
 
@@ -155,7 +188,7 @@
 }
 
 .eventLink{
-  background-color: rgb(128, 5, 133);
+  background-color: rgb(160, 14, 165);
   padding: 5px 15px;
   border-radius: 15px;
   text-decoration: none;
