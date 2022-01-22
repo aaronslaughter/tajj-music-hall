@@ -31,3 +31,27 @@
 	flex-wrap: wrap;
 	justify-content: center;
 }
+
+.about_pT {
+	color: rgba(252, 1, 244, 0.9);
+
+	font-size: 20px;
+}
+
+.about_pA {
+	color: rgba(13, 249, 249, 0.9);
+
+	font-size: 20px;
+}
+
+.about_pJa {
+	color: rgba(252, 1, 244, 0.9);
+
+	font-size: 20px;
+}
+
+.about_pJu {
+	color: rgba(255, 255, 0, 0.9);
+
+	font-size: 20px;
+}
