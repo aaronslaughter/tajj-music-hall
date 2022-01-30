@@ -20,7 +20,8 @@ const handleDelete = async (commentId) => {
           {props.eventState.attendees.length > 0 && 
             <div className='Acomment'>
               <div className='commentName'>
-                {props.eventState.attendees.find((attendee) => attendee.user_list[0].id === element.user_id).user_list[0].name}
+                {props.eventState.attendees.find((attendee) => attendee.user_list[0].id === element.user_id) &&
+                props.eventState.attendees.find((attendee) => attendee.user_list[0].id === element.user_id).user_list[0].name}
               </div> 
               <div className='commentText'> 
                 {element.content}
