@@ -12,7 +12,7 @@ export const DiscoverEvents = async () => {
     events.push({artist: response.data[0].artist, event: response.data[0]})
     response = await BITClient.get(`/artists/Olivia Rodrigo/events/?app_id=${process.env.REACT_APP_BIT_API_KEY}`)
     events.push({artist: response.data[0].artist, event: response.data[0]})
-    response = await BITClient.get(`/artists/The Weeknd/events/?app_id=${process.env.REACT_APP_BIT_API_KEY}`)
+    response = await BITClient.get(`/artists/Bruno Mars/events/?app_id=${process.env.REACT_APP_BIT_API_KEY}`)
     events.push({artist: response.data[0].artist, event: response.data[0]})
     response = await BITClient.get(`/artists/Luke Combs/events/?app_id=${process.env.REACT_APP_BIT_API_KEY}`)
     events.push({artist: response.data[0].artist, event: response.data[0]})
